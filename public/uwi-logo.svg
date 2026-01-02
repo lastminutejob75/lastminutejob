@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Fond blanc -->
+  <rect width="120" height="120" fill="white" rx="20"/>
+  
+  <!-- Lettres "uw" en bleu (#2563eb) - police plus épaisse pour meilleure lisibilité -->
+  <text x="15" y="70" font-family="Arial, Helvetica, sans-serif" font-size="55" font-weight="900" fill="#2563eb" letter-spacing="-2">uw</text>
+  
+  <!-- Lettre "i" en orange (#f97316) -->
+  <text x="70" y="70" font-family="Arial, Helvetica, sans-serif" font-size="55" font-weight="900" fill="#f97316">i</text>
+  
+  <!-- Point du "i" en orange, plus visible -->
+  <circle cx="88" cy="22" r="7" fill="#f97316"/>
+</svg>

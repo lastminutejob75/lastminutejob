@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Google Auth - Supabase</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    button {
+      background: #4285F4;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 5px;
+    }
+    button:hover { background: #357ae8; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .info { background: #e3f2fd; padding: 15px; border-radius: 6px; margin: 10px 0; }
+    .error { background: #ffebee; color: #c62828; padding: 15px; border-radius: 6px; margin: 10px 0; }
+    .success { background: #e8f5e9; color: #2e7d32; padding: 15px; border-radius: 6px; margin: 10px 0; }
+    pre { background: #f5f5f5; padding: 10px; border-radius: 4px; overflow-x: auto; }
+    .status { font-size: 12px; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🔐 Test Google Authentication</h1>
+    <p>Outil de diagnostic pour vérifier la configuration Google OAuth avec Supabase</p>
+  </div>
+
+  <div class="card">
+    <h2>Configuration Supabase</h2>
+    <div id="config-status" class="status">Chargement...</div>
+    <div id="config-details"></div>
+  </div>
+
+  <div class="card">
+    <h2>Test de connexion</h2>
+    <button id="loginBtn" onclick="testGoogleLogin()">
+      Se connecter avec Google
+    </button>
+    <button onclick="testSession()">
+      Vérifier la session
+    </button>
+    <button onclick="logout()">
+      Se déconnecter
+    </button>
+    <div id="auth-result"></div>
+  </div>
+
+  <div class="card">
+    <h2>Logs</h2>
+    <div id="logs" style="font-family: monospace; font-size: 12px;"></div>
+  </div>
+
+  <script>
+    const SUPABASE_URL = 'https://dxslenzfyqqtxylotcmm.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR4c2xlbnpmeXFxdHh5bG90Y21tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNjY5NjksImV4cCI6MjA3Nzg0Mjk2OX0.WdMVAT26M2pHfXqa2i4wmojv6dBAOfxa8yC9LOz55Ug';
+
+    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    function log(msg, type = 'info') {
+      const logsDiv = document.getElementById('logs');
+      const time = new Date().toLocaleTimeString();
+      const emoji = type === 'error' ? '❌' : type === 'success' ? '✅' : 'ℹ️';
+      logsDiv.innerHTML += `<div>${emoji} [${time}] ${msg}</div>`;
+      console.log(msg);
+    }
+
+    // Vérifier la configuration au chargement
+    window.addEventListener('load', async () => {
+      log('Page chargée, vérification de la configuration...');
+
+      const configDiv = document.getElementById('config-details');
+      configDiv.innerHTML = `
+        <div class="info">
+          <strong>Supabase URL:</strong> ${SUPABASE_URL}<br>
+          <strong>Redirect URL actuel:</strong> ${window.location.origin}<br>
+          <strong>URL complète:</strong> ${window.location.href}
+        </div>
+      `;
+
+      // Vérifier s'il y a une session active
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session) {
+        log('✅ Session active trouvée!', 'success');
+        displaySession(session);
+      } else {
+        log('Aucune session active');
+      }
+
+      // Écouter les changements d'authentification
+      supabase.auth.onAuthStateChange((event, session) => {
+        log(`Auth state changed: ${event}`, 'success');
+        if (session) {
+          displaySession(session);
+        }
+      });
+
+      document.getElementById('config-status').textContent = '✅ Supabase client initialisé';
+    });
+
+    async function testGoogleLogin() {
+      log('🔐 Tentative de connexion Google...');
+      const btn = document.getElementById('loginBtn');
+      btn.disabled = true;
+      btn.textContent = 'Connexion en cours...';
+
+      try {
+        const { data, error } = await supabase.auth.signInWithOAuth({
+          provider: 'google',
+          options: {
+            redirectTo: window.location.origin + window.location.pathname
+          }
+        });
+
+        if (error) {
+          log(`❌ Erreur: ${error.message}`, 'error');
+          document.getElementById('auth-result').innerHTML = `
+            <div class="error">
+              <strong>Erreur lors de la connexion:</strong><br>
+              ${error.message}<br><br>
+              <strong>Vérifications:</strong>
+              <ol>
+                <li>Google OAuth est activé dans <a href="https://supabase.com/dashboard/project/dxslenzfyqqtxylotcmm/auth/providers" target="_blank">Supabase Dashboard</a></li>
+                <li>Client ID et Secret Google sont configurés</li>
+                <li>Dans Google Cloud Console, les URLs autorisées incluent:
+                  <ul>
+                    <li>JavaScript origins: <code>https://dxslenzfyqqtxylotcmm.supabase.co</code></li>
+                    <li>Redirect URIs: <code>https://dxslenzfyqqtxylotcmm.supabase.co/auth/v1/callback</code></li>
+                  </ul>
+                </li>
+              </ol>
+            </div>
+          `;
+        } else {
+          log('✅ Redirection vers Google...', 'success');
+          log(`URL de redirection: ${data.url}`);
+        }
+      } catch (err) {
+        log(`❌ Exception: ${err.message}`, 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Se connecter avec Google';
+      }
+    }
+
+    async function testSession() {
+      log('Vérification de la session...');
+      const { data: { session }, error } = await supabase.auth.getSession();
+
+      if (error) {
+        log(`❌ Erreur: ${error.message}`, 'error');
+        return;
+      }
+
+      if (session) {
+        log('✅ Session trouvée!', 'success');
+        displaySession(session);
+      } else {
+        log('❌ Aucune session active', 'error');
+        document.getElementById('auth-result').innerHTML = '<div class="error">Aucune session active</div>';
+      }
+    }
+
+    async function logout() {
+      log('Déconnexion...');
+      const { error } = await supabase.auth.signOut();
+      if (error) {
+        log(`❌ Erreur lors de la déconnexion: ${error.message}`, 'error');
+      } else {
+        log('✅ Déconnexion réussie', 'success');
+        document.getElementById('auth-result').innerHTML = '<div class="success">Déconnexion réussie!</div>';
+      }
+    }
+
+    function displaySession(session) {
+      const user = session.user;
+      document.getElementById('auth-result').innerHTML = `
+        <div class="success">
+          <h3>✅ Authentifié avec succès!</h3>
+          <strong>Email:</strong> ${user.email}<br>
+          <strong>ID:</strong> ${user.id}<br>
+          <strong>Provider:</strong> ${user.app_metadata.provider}<br>
+          ${user.user_metadata.full_name ? `<strong>Nom:</strong> ${user.user_metadata.full_name}<br>` : ''}
+          ${user.user_metadata.avatar_url ? `<img src="${user.user_metadata.avatar_url}" style="width:50px;border-radius:50%;margin-top:10px;">` : ''}
+          <details style="margin-top:10px;">
+            <summary>Détails complets de la session</summary>
+            <pre>${JSON.stringify(session, null, 2)}</pre>
+          </details>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>

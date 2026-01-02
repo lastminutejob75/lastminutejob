@@ -1,0 +1,8 @@
+node_modules
+.env
+.git
+supabase/
+test-*.html
+test-*.js
+.env.local
+.env.*.local
