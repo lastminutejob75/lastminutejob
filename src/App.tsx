@@ -3775,7 +3775,7 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
       <Section id="testimonials" className="py-12">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Ils en parlent</h2>
         <div className="grid md:grid-cols-2 gap-6">
-          <Testimonial quote={<><UWiLogo size="sm" /> m'a fait gagner 2h par jour pour mes recrutements.</>} author="Sophie" role="RH chez FoodExpress" />
+          <Testimonial quote="UWi m'a fait gagner 2h par jour pour mes recrutements." author="Sophie" role="RH chez FoodExpress" />
           <Testimonial quote="Des annonces plus claires, plus efficaces, et de meilleurs candidats." author="Karim" role="Manager logistique" />
         </div>
       </Section>
