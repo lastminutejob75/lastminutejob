@@ -1554,20 +1554,6 @@ function PublicJob({job,canEdit,onBack,refresh,onRequestAccess}:{job:any;canEdit
   const Icon=iconForRole(job.role);
   const hasPrescreen = job?.prescreen_questions && job.prescreen_questions.length > 0;
 
-  // Debug: vérifier les coordonnées et canEdit
-  useEffect(() => {
-    console.log('🔍 Debug PublicJob:', {
-      canEdit,
-      hasJob: !!job,
-      contact_email: job?.contact_email,
-      contact_phone: job?.contact_phone,
-      company_name: job?.company_name,
-      contact_name: job?.contact_name,
-      editToken: job?.edit_token,
-      fullJob: job
-    });
-  }, [canEdit, job]);
-
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -2570,19 +2556,13 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
         console.error("[generateAnnouncement] Erreur API:", res.status, data);
         throw new Error("llm error");
       }
-      
+
       const llmResp = data.announcement;
-      console.log("[generateAnnouncement] ✅ Réponse LLM reçue:", llmResp);
       setLlmAnnouncement(llmResp);
-      
+
       // Convertir la réponse LLM en draft pour l'affichage
       const { convertLLMResponseToDraft } = await import("./lib/simpleAnnounce");
       const draftFromLLM = convertLLMResponseToDraft(llmResp, prompt);
-      console.log("[generateAnnouncement] 📝 Draft créé:", {
-        jobTitle: draftFromLLM.jobTitle,
-        jobKey: draftFromLLM.jobKey,
-        location: draftFromLLM.location
-      });
       setDraft(draftFromLLM);
       
       setSubmitted(true);
@@ -2633,7 +2613,6 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
     // cas "je parle de moi"
     setShowIntentBox(false);
     setIntentType(null);
-    console.log("[UWi] L'utilisateur parle de lui (recherche de missions)");
     // plus tard : redirection vers /candidate
   }
   

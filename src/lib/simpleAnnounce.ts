@@ -399,12 +399,6 @@ export function simpleGenerateAnnouncement(prompt: string): SimpleAnnouncementDr
   const jobDetection = detectSimpleJob(prompt);
   const location = extractSimpleLocation(prompt);
 
-  console.log("[simpleGenerateAnnouncement] DEBUG:", {
-    prompt,
-    jobDetection,
-    location
-  });
-
   const defaultTitle =
     jobDetection.found && jobDetection.jobLabel
       ? jobDetection.jobLabel
@@ -415,12 +409,6 @@ export function simpleGenerateAnnouncement(prompt: string): SimpleAnnouncementDr
     defaultTitle,
     prompt
   );
-
-  console.log("[simpleGenerateAnnouncement] Résultat:", {
-    jobKey: jobDetection.jobKey,
-    jobTitle: defaultTitle,
-    location
-  });
 
   return {
     jobKey: jobDetection.jobKey,
@@ -496,26 +484,17 @@ export function convertLLMResponseToDraft(
   // 4. role_label du LLM même s'il est générique
   // 5. Chaîne vide en dernier recours (l'utilisateur devra remplir)
   let finalJobTitle = "";
-  
-  // DEBUG: Log pour comprendre ce qui se passe
-  console.log("[convertLLMResponseToDraft] DEBUG:", {
-    originalPrompt,
-    llmRoleLabel: llmResponse.role_label,
-    jobDetectionFromPrompt,
-    jobDetectionFromLLM
-  });
-  
+
   // PRIORITÉ 1 : Si la détection depuis le prompt a trouvé un métier, on l'utilise TOUJOURS
   // C'EST LA PRIORITÉ ABSOLUE - RIEN NE PEUT LA REMPLACER
   // Même si le LLM retourne quelque chose, on fait confiance à la détection locale
   if (jobDetectionFromPrompt.found && jobDetectionFromPrompt.jobLabel) {
     finalJobTitle = jobDetectionFromPrompt.jobLabel;
-    console.log("[convertLLMResponseToDraft] ✅ PRIORITÉ ABSOLUE: Utilisation de la détection depuis prompt:", finalJobTitle);
-  } 
+  }
   // PRIORITÉ 2 : Sinon, si le LLM a fourni un role_label spécifique et non générique
   // (seulement si la détection depuis le prompt n'a RIEN trouvé)
-  else if (llmResponse.role_label && 
-      llmResponse.role_label.trim() && 
+  else if (llmResponse.role_label &&
+      llmResponse.role_label.trim() &&
       llmResponse.role_label !== "Rôle à préciser" &&
       llmResponse.role_label !== "" &&
       llmResponse.role_label !== "Rôle à définir" &&
@@ -527,29 +506,19 @@ export function convertLLMResponseToDraft(
       !llmResponse.role_label.toLowerCase().includes("définir")) {
     // Le LLM a fourni un role_label spécifique
     finalJobTitle = llmResponse.role_label;
-    console.log("[convertLLMResponseToDraft] ✅ Utilisation du role_label LLM:", finalJobTitle);
-  } 
+  }
   // PRIORITÉ 3 : Sinon, si la détection depuis le role_label a trouvé quelque chose
   else if (jobDetectionFromLLM?.found && jobDetectionFromLLM.jobLabel) {
     finalJobTitle = jobDetectionFromLLM.jobLabel;
-    console.log("[convertLLMResponseToDraft] ✅ Utilisation de la détection depuis role_label:", finalJobTitle);
-  } 
+  }
   // PRIORITÉ 4 : Sinon, on utilise quand même le role_label du LLM même s'il est générique
   // (mais seulement s'il n'est pas complètement vide ou générique)
-  else if (llmResponse.role_label && 
-           llmResponse.role_label.trim() && 
+  else if (llmResponse.role_label &&
+           llmResponse.role_label.trim() &&
            llmResponse.role_label !== "Rôle à préciser" &&
       llmResponse.role_label !== "" &&
            llmResponse.role_label !== "Rôle à définir") {
     finalJobTitle = llmResponse.role_label;
-    console.log("[convertLLMResponseToDraft] ⚠️ Utilisation du role_label LLM (générique):", finalJobTitle);
-  } else {
-    console.log("[convertLLMResponseToDraft] ❌ Aucune détection, champ vide pour que l'utilisateur remplisse");
-    console.log("[convertLLMResponseToDraft] ❌ Détails:", {
-      jobDetectionFromPromptFound: jobDetectionFromPrompt.found,
-      jobDetectionFromPromptLabel: jobDetectionFromPrompt.jobLabel,
-      llmRoleLabel: llmResponse.role_label
-    });
   }
   
   // Si le LLM a détecté un métier mais qu'on ne l'a pas reconnu, on utilise "generic" au lieu de "custom"
@@ -562,17 +531,12 @@ export function convertLLMResponseToDraft(
 
   // S'assurer que finalJobTitle n'est jamais "Rôle à préciser" ou "Rôle à définir"
   // On nettoie complètement pour garantir que l'utilisateur voit toujours un message clair
-  const cleanJobTitle = (finalJobTitle === "Rôle à préciser" || 
-                         finalJobTitle === "Rôle à définir" || 
-                         !finalJobTitle || 
-                         !finalJobTitle.trim()) 
-    ? "" 
+  const cleanJobTitle = (finalJobTitle === "Rôle à préciser" ||
+                         finalJobTitle === "Rôle à définir" ||
+                         !finalJobTitle ||
+                         !finalJobTitle.trim())
+    ? ""
     : finalJobTitle;
-
-  console.log("[convertLLMResponseToDraft] 🧹 Nettoyage final jobTitle:", {
-    avant: finalJobTitle,
-    apres: cleanJobTitle
-  });
 
   return {
     jobKey: finalJobKey,
