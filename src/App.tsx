@@ -1588,8 +1588,15 @@ function PublicJob({job,canEdit,onBack,refresh,onRequestAccess}:{job:any;canEdit
         alert('Le fichier est trop volumineux. Taille maximale : 5MB');
         return;
       }
+
+      // Validate both MIME type and file extension for better security and compatibility
       const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-      if (!allowedTypes.includes(file.type)) {
+      const allowedExtensions = ['.pdf', '.doc', '.docx'];
+      const fileExtension = file.name.toLowerCase().substring(file.name.lastIndexOf('.'));
+
+      const isValidType = allowedTypes.includes(file.type) || allowedExtensions.includes(fileExtension);
+
+      if (!isValidType) {
         alert('Format de fichier non supporté. Veuillez utiliser PDF, DOC ou DOCX');
         return;
       }
