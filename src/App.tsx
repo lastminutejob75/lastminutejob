@@ -2507,7 +2507,7 @@ function OnboardingTutorial({
 
 function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: (prompt: string, preview: any) => void }) {
   const [prompt, setPrompt] = useState("");
-  const [heroVariant] = useState(() => (Math.random() > 0.5 ? "A" : "B"));
+  // const [heroVariant] = useState(() => (Math.random() > 0.5 ? "A" : "B")); // Désactivé - utilisation d'un seul variant
   const [submitted, setSubmitted] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
   const [userType, setUserType] = useState<"recruteur" | "candidat" | null>(null);
@@ -3787,7 +3787,7 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
       <Section id="testimonials" className="py-12">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Ils en parlent</h2>
         <div className="grid md:grid-cols-2 gap-6">
-          <Testimonial quote={<><UWiLogo size="sm" /> m'a fait gagner 2h par jour pour mes recrutements.</>} author="Sophie" role="RH chez FoodExpress" />
+          <Testimonial quote="UWi m'a fait gagner 2h par jour pour mes recrutements." author="Sophie" role="RH chez FoodExpress" />
           <Testimonial quote="Des annonces plus claires, plus efficaces, et de meilleurs candidats." author="Karim" role="Manager logistique" />
         </div>
       </Section>
