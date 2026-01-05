@@ -715,7 +715,7 @@ function Home({onGenerated}:{onGenerated:(p:any,txt:string)=>void}){
                             −
                           </button>
                           <button
-                                onClick={() => setTextAndFocus(suggText.replace(/\d+€\/h/, `${currentRate}€/h`))}
+                                onClick={() => setTextAndFocus(suggText.replace(/\d+€\/h/g, `${currentRate}€/h`))}
                             className="px-3 py-2 text-sm text-blue-700 font-medium"
                           >
                             {currentRate}€/h
@@ -756,7 +756,7 @@ function Home({onGenerated}:{onGenerated:(p:any,txt:string)=>void}){
                             −
                           </button>
                           <button
-                                onClick={() => setTextAndFocus(suggText.replace(/\d{1,2}h-\d{1,2}h/, `${start}h-${end}h`))}
+                                onClick={() => setTextAndFocus(suggText.replace(/\d{1,2}h-\d{1,2}h/g, `${start}h-${end}h`))}
                             className="px-2 py-1 text-[10px] sm:text-xs text-blue-700 font-medium"
                           >
                             {start}h-{end}h
@@ -789,7 +789,7 @@ function Home({onGenerated}:{onGenerated:(p:any,txt:string)=>void}){
                             −
                           </button>
                           <button
-                                onClick={() => setTextAndFocus(suggText.replace(/\d{1,2}h-\d{1,2}h/, `${start}h-${end}h`))}
+                                onClick={() => setTextAndFocus(suggText.replace(/\d{1,2}h-\d{1,2}h/g, `${start}h-${end}h`))}
                             className="px-2 py-1 text-[10px] sm:text-xs text-blue-700 font-medium"
                           >
                             {end}h
@@ -3966,7 +3966,7 @@ export default function App(){
         return;
       }
       if(path.startsWith("apply/")){
-        const jobId = path.replace("apply/","");
+        const jobId = path.substring("apply/".length);
         setApplyJobId(jobId);
         setRoute("apply");
         return;
