@@ -150,13 +150,10 @@ const SIMPLE_JOB_PATTERNS: { key: SimpleJobKey; label: string; keywords: string[
 
 export function detectSimpleJob(prompt: string): SimpleJobDetection {
   const lower = prompt.toLowerCase().trim();
-  
+
   if (!lower) {
     return { jobKey: "custom", jobLabel: "", found: false };
   }
-
-  console.log("[detectSimpleJob] DEBUG - prompt:", prompt);
-  console.log("[detectSimpleJob] DEBUG - lower:", lower);
 
   // Priorité : chercher les métiers composés d'abord (ex: "agent immobilier")
   // On trie les patterns par longueur de keywords (les plus longs en premier)
@@ -178,21 +175,18 @@ export function detectSimpleJob(prompt: string): SimpleJobDetection {
         lower.includes("restauration") &&
         (lower.includes("extra") || lower.includes("extras"))
       ) {
-        console.log("[detectSimpleJob] ✅ Trouvé server via cas spécial");
         return { jobKey: "server", jobLabel: pattern.label, found: true };
       }
     }
 
     if (pattern.key === "dev_web") {
       if (lower.includes("site vitrine") || lower.includes("site internet") || lower.includes("développement web")) {
-        console.log("[detectSimpleJob] ✅ Trouvé dev_web via cas spécial");
         return { jobKey: "dev_web", jobLabel: pattern.label, found: true };
       }
     }
 
     if (pattern.key === "community_manager") {
       if (lower.includes("réseaux sociaux") || lower.includes("social media")) {
-        console.log("[detectSimpleJob] ✅ Trouvé community_manager via cas spécial");
         return {
           jobKey: "community_manager",
           jobLabel: pattern.label,
@@ -207,7 +201,6 @@ export function detectSimpleJob(prompt: string): SimpleJobDetection {
     for (const keyword of pattern.sortedKeywords || pattern.keywords) {
       // Correspondance exacte du mot-clé
       if (lower.includes(keyword)) {
-        console.log("[detectSimpleJob] ✅ Trouvé", pattern.key, "via keyword:", keyword);
         return { jobKey: pattern.key, jobLabel: pattern.label, found: true };
       }
       
@@ -235,7 +228,6 @@ export function detectSimpleJob(prompt: string): SimpleJobDetection {
           return false;
         });
         if (allWordsPresent) {
-          console.log("[detectSimpleJob] ✅ Trouvé", pattern.key, "via mots séparés:", keywordWords);
           return { jobKey: pattern.key, jobLabel: pattern.label, found: true };
         }
       }
@@ -244,7 +236,6 @@ export function detectSimpleJob(prompt: string): SimpleJobDetection {
 
   // rien trouvé => on laisse l'utilisateur écrire lui-même le métier
   // MAIS on ne bloque pas : le LLM pourra gérer le métier même s'il n'est pas reconnu
-  console.log("[detectSimpleJob] ❌ Aucun métier trouvé pour:", prompt);
   return { jobKey: "custom", jobLabel: "", found: false };
 }
 

@@ -95,11 +95,15 @@ export async function getJob(id: string) {
 
   if (!jobData) return null;
 
-  const { data: questionsData } = await supabase
+  const { data: questionsData, error: questionsError } = await supabase
     .from('prescreen_questions')
     .select('id, question_text, question_order')
     .eq('job_id', id)
     .order('question_order', { ascending: true });
+
+  if (questionsError) {
+    console.error('Error fetching prescreen questions:', questionsError);
+  }
 
   return {
     id: jobData.id,

@@ -715,7 +715,7 @@ function Home({onGenerated}:{onGenerated:(p:any,txt:string)=>void}){
                             −
                           </button>
                           <button
-                                onClick={() => setTextAndFocus(suggText.replace(/\d+€\/h/, `${currentRate}€/h`))}
+                                onClick={() => setTextAndFocus(suggText.replace(/\d+€\/h/g, `${currentRate}€/h`))}
                             className="px-3 py-2 text-sm text-blue-700 font-medium"
                           >
                             {currentRate}€/h
@@ -756,7 +756,7 @@ function Home({onGenerated}:{onGenerated:(p:any,txt:string)=>void}){
                             −
                           </button>
                           <button
-                                onClick={() => setTextAndFocus(suggText.replace(/\d{1,2}h-\d{1,2}h/, `${start}h-${end}h`))}
+                                onClick={() => setTextAndFocus(suggText.replace(/\d{1,2}h-\d{1,2}h/g, `${start}h-${end}h`))}
                             className="px-2 py-1 text-[10px] sm:text-xs text-blue-700 font-medium"
                           >
                             {start}h-{end}h
@@ -789,7 +789,7 @@ function Home({onGenerated}:{onGenerated:(p:any,txt:string)=>void}){
                             −
                           </button>
                           <button
-                                onClick={() => setTextAndFocus(suggText.replace(/\d{1,2}h-\d{1,2}h/, `${start}h-${end}h`))}
+                                onClick={() => setTextAndFocus(suggText.replace(/\d{1,2}h-\d{1,2}h/g, `${start}h-${end}h`))}
                             className="px-2 py-1 text-[10px] sm:text-xs text-blue-700 font-medium"
                           >
                             {end}h
@@ -1538,8 +1538,35 @@ function ShareButton({ name, href }:{name:string;href:string}){
 
 function CopyLink({url}:{url:string}){
   const [ok,setOk]=useState(false);
+  const [error,setError]=useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      setOk(true);
+      setError(false);
+      setTimeout(() => setOk(false), 1200);
+    } catch (err) {
+      setError(true);
+      setTimeout(() => setError(false), 2000);
+    }
+  };
+
   return (
-    <button onClick={async()=>{try{await navigator.clipboard.writeText(url);setOk(true);setTimeout(()=>setOk(false),1200);}catch{}}} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-sm">{ok?<><Check className="w-4 h-4"/>Copié</>:<><Copy className="w-4 h-4"/>Copier</>}</button>
+    <button
+      onClick={handleCopy}
+      className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-sm transition-colors ${
+        error ? 'border-red-300 bg-red-50 text-red-700' : ''
+      }`}
+    >
+      {ok ? (
+        <><Check className="w-4 h-4"/>Copié</>
+      ) : error ? (
+        <><XCircle className="w-4 h-4"/>Erreur</>
+      ) : (
+        <><Copy className="w-4 h-4"/>Copier</>
+      )}
+    </button>
   )
 }
 
@@ -1554,20 +1581,6 @@ function PublicJob({job,canEdit,onBack,refresh,onRequestAccess}:{job:any;canEdit
   const Icon=iconForRole(job.role);
   const hasPrescreen = job?.prescreen_questions && job.prescreen_questions.length > 0;
 
-  // Debug: vérifier les coordonnées et canEdit
-  useEffect(() => {
-    console.log('🔍 Debug PublicJob:', {
-      canEdit,
-      hasJob: !!job,
-      contact_email: job?.contact_email,
-      contact_phone: job?.contact_phone,
-      company_name: job?.company_name,
-      contact_name: job?.contact_name,
-      editToken: job?.edit_token,
-      fullJob: job
-    });
-  }, [canEdit, job]);
-
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -1575,8 +1588,15 @@ function PublicJob({job,canEdit,onBack,refresh,onRequestAccess}:{job:any;canEdit
         alert('Le fichier est trop volumineux. Taille maximale : 5MB');
         return;
       }
+
+      // Validate both MIME type and file extension for better security and compatibility
       const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-      if (!allowedTypes.includes(file.type)) {
+      const allowedExtensions = ['.pdf', '.doc', '.docx'];
+      const fileExtension = file.name.toLowerCase().substring(file.name.lastIndexOf('.'));
+
+      const isValidType = allowedTypes.includes(file.type) || allowedExtensions.includes(fileExtension);
+
+      if (!isValidType) {
         alert('Format de fichier non supporté. Veuillez utiliser PDF, DOC ou DOCX');
         return;
       }
@@ -2570,19 +2590,13 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
         console.error("[generateAnnouncement] Erreur API:", res.status, data);
         throw new Error("llm error");
       }
-      
+
       const llmResp = data.announcement;
-      console.log("[generateAnnouncement] ✅ Réponse LLM reçue:", llmResp);
       setLlmAnnouncement(llmResp);
-      
+
       // Convertir la réponse LLM en draft pour l'affichage
       const { convertLLMResponseToDraft } = await import("./lib/simpleAnnounce");
       const draftFromLLM = convertLLMResponseToDraft(llmResp, prompt);
-      console.log("[generateAnnouncement] 📝 Draft créé:", {
-        jobTitle: draftFromLLM.jobTitle,
-        jobKey: draftFromLLM.jobKey,
-        location: draftFromLLM.location
-      });
       setDraft(draftFromLLM);
       
       setSubmitted(true);
@@ -2633,7 +2647,6 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
     // cas "je parle de moi"
     setShowIntentBox(false);
     setIntentType(null);
-    console.log("[UWi] L'utilisateur parle de lui (recherche de missions)");
     // plus tard : redirection vers /candidate
   }
   
@@ -3968,7 +3981,7 @@ export default function App(){
         return;
       }
       if(path.startsWith("apply/")){
-        const jobId = path.replace("apply/","");
+        const jobId = path.substring("apply/".length);
         setApplyJobId(jobId);
         setRoute("apply");
         return;
