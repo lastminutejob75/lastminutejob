@@ -2955,9 +2955,12 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
             }}
             className="flex items-center gap-1.5 sm:gap-2 hover:opacity-80 transition-opacity cursor-pointer"
           >
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl grid place-items-center text-white font-bold text-[10px] sm:text-xs" style={{ backgroundColor: COLORS.blue }}>LMJ</div>
-            <span className="font-semibold text-sm sm:text-base">LastMinuteJob</span>
-            <span className="ml-1 sm:ml-2 px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-semibold"><UWiLogo size="sm" /></span>
+            <UWiLogo size="md" />
+            <span className="font-semibold text-sm sm:text-base text-slate-900">LastMinuteJob</span>
+            <span className="ml-1 sm:ml-2 px-2 sm:px-3 py-1 text-[10px] sm:text-xs rounded-full bg-gradient-to-r from-blue-50 to-orange-50 border border-blue-200 text-blue-700 font-semibold flex items-center gap-1">
+              <Sparkles size={10} className="text-blue-600" />
+              Agent RH IA
+            </span>
           </button>
           <nav className="hidden md:flex gap-6">
             <a href="#how" onClick={(e) => handleAnchorClick(e, "#how")} className="text-sm text-slate-600 hover:text-blue-600 transition-colors">Fonctionnement</a>
