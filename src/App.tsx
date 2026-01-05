@@ -1538,8 +1538,35 @@ function ShareButton({ name, href }:{name:string;href:string}){
 
 function CopyLink({url}:{url:string}){
   const [ok,setOk]=useState(false);
+  const [error,setError]=useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      setOk(true);
+      setError(false);
+      setTimeout(() => setOk(false), 1200);
+    } catch (err) {
+      setError(true);
+      setTimeout(() => setError(false), 2000);
+    }
+  };
+
   return (
-    <button onClick={async()=>{try{await navigator.clipboard.writeText(url);setOk(true);setTimeout(()=>setOk(false),1200);}catch{}}} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-sm">{ok?<><Check className="w-4 h-4"/>Copié</>:<><Copy className="w-4 h-4"/>Copier</>}</button>
+    <button
+      onClick={handleCopy}
+      className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-sm transition-colors ${
+        error ? 'border-red-300 bg-red-50 text-red-700' : ''
+      }`}
+    >
+      {ok ? (
+        <><Check className="w-4 h-4"/>Copié</>
+      ) : error ? (
+        <><XCircle className="w-4 h-4"/>Erreur</>
+      ) : (
+        <><Copy className="w-4 h-4"/>Copier</>
+      )}
+    </button>
   )
 }
 
