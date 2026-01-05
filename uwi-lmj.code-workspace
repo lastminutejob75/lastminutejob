@@ -1,0 +1,26 @@
+{
+  "folders": [
+    {
+      "name": "🎯 UWi - Projet Principal",
+      "path": "./uwi"
+    },
+    {
+      "name": "📦 LMJ - Projet Legacy",
+      "path": "./lmj"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/.next": true,
+      "**/dist": true,
+      "**/.git": false
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/.next": true,
+      "**/dist": true
+    }
+  }
+}
+

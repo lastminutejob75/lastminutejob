@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Publication</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <h1>Test Publication d'Annonce</h1>
+    <button onclick="testPublish()">Tester Publication</button>
+    <div id="result"></div>
+
+    <script>
+        const SUPABASE_URL = 'https://dxslenzfyqqtxylotcmm.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR4c2xlbnpmeXFxdHh5bG90Y21tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNjY5NjksImV4cCI6MjA3Nzg0Mjk2OX0.WdMVAT26M2pHfXqa2i4wmojv6dBAOfxa8yC9LOz55Ug';
+
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        async function testPublish() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p>⏳ Test en cours...</p>';
+
+            try {
+                console.log('🔵 Début du test de publication');
+
+                const jobData = {
+                    title: 'Test Serveur',
+                    body: 'Nous cherchons un serveur dynamique',
+                    edit_token: 'test_token_' + Date.now(),
+                    parsed: {
+                        role: 'serveur',
+                        city: 'Paris',
+                        date: 'Lundi 11 novembre',
+                        duration: '18h-23h',
+                        hourly: '12€/h'
+                    },
+                    contact: {
+                        company: 'Test Restaurant',
+                        name: 'Test',
+                        email: 'test@test.com',
+                        phone: '0612345678'
+                    },
+                    status: 'approved'
+                };
+
+                console.log('📝 Données à insérer:', jobData);
+
+                const { data, error } = await supabase
+                    .from('jobs')
+                    .insert([jobData])
+                    .select()
+                    .maybeSingle();
+
+                if (error) {
+                    console.error('❌ Erreur:', error);
+                    resultDiv.innerHTML = `
+                        <h2>❌ Erreur</h2>
+                        <pre>${JSON.stringify(error, null, 2)}</pre>
+                    `;
+                    return;
+                }
+
+                console.log('✅ Succès:', data);
+                resultDiv.innerHTML = `
+                    <h2>✅ Succès!</h2>
+                    <p>ID: ${data.id}</p>
+                    <p>Status: ${data.status}</p>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+
+            } catch (err) {
+                console.error('💥 Exception:', err);
+                resultDiv.innerHTML = `
+                    <h2>💥 Exception</h2>
+                    <pre>${err.message || err}</pre>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

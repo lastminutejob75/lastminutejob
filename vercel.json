@@ -1,0 +1,43 @@
+{
+<<<<<<< HEAD
+  "buildCommand": "cd uwi && npm run build",
+  "installCommand": "cd uwi && npm install",
+  "framework": "nextjs"
+}
+
+=======
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/admin.html",
+      "destination": "/admin.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cross-Origin-Embedder-Policy",
+          "value": "unsafe-none"
+        }
+      ]
+    }
+  ]
+}
+>>>>>>> f8de2ef9be6c4a391709abbb5767e88b2caa805f

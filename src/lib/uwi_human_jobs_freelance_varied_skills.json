@@ -1,0 +1,8340 @@
+[
+  {
+    "id": 1,
+    "name": "Serveur / Serveuse",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Prise de commande",
+      "Encaissement",
+      "Port de plateaux",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 2,
+    "name": "Chef de rang",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 3,
+    "name": "Commis de cuisine",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 4,
+    "name": "Cuisinier",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Maîtrise des cuissons",
+      "Chaîne du froid",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 5,
+    "name": "Chef cuisinier",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Maîtrise des cuissons",
+      "Chaîne du froid",
+      "HACCP"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 6,
+    "name": "Plongeur",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Nettoyage matériel",
+      "Organisation de la plonge",
+      "HACCP"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 7,
+    "name": "Réceptionniste",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Gestion des réservations",
+      "Check-in / Check-out",
+      "Outils PMS",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 8,
+    "name": "Femme de chambre",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 9,
+    "name": "Valet de chambre",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 10,
+    "name": "Concierge",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 11,
+    "name": "Barman / Barmaid",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Préparation de cocktails",
+      "Gestion du stock bar",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 12,
+    "name": "Sommelier",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Œnologie",
+      "Accords mets-vins",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 13,
+    "name": "Traiteur",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 14,
+    "name": "Responsable de salle",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "HACCP"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 15,
+    "name": "Gouvernante",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 16,
+    "name": "Employé polyvalent d’hôtel",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 17,
+    "name": "Maître d’hôtel",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 18,
+    "name": "Runner",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 19,
+    "name": "Hôte / Hôtesse événementiel",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 20,
+    "name": "Agent d’entretien hôtelier",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 21,
+    "name": "Chef pâtissier",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 22,
+    "name": "Pâtissier",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 23,
+    "name": "Boulanger",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 24,
+    "name": "Chef de partie",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 25,
+    "name": "Crêpier",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 26,
+    "name": "Glacier",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 27,
+    "name": "Équipier polyvalent restauration",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 28,
+    "name": "Manager restauration",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "HACCP"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 29,
+    "name": "Vendeur sandwicherie",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Conseil client",
+      "Mise en rayon",
+      "HACCP"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 30,
+    "name": "Chef de banquet",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 31,
+    "name": "Coordinateur événementiel",
+    "category": "Hôtellerie & Restauration",
+    "skills": [
+      "Accueil client",
+      "Esprit d'équipe",
+      "Horaires décalés",
+      "Station debout prolongée",
+      "Adaptabilité",
+      "Communication",
+      "HACCP"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UtensilsCrossed"
+  },
+  {
+    "id": 32,
+    "name": "Cariste",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "CACES",
+      "Conduite de chariot élévateur",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 33,
+    "name": "Manutentionnaire",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 34,
+    "name": "Préparateur de commandes",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Picking",
+      "Scanette",
+      "Conditionnement",
+      "Traçabilité"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 35,
+    "name": "Agent de quai",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 36,
+    "name": "Magasinier",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Inventaires",
+      "Réception marchandises",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 37,
+    "name": "Gestionnaire de stocks",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 38,
+    "name": "Chauffeur-livreur VL",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Conduite sécurisée",
+      "Itinéraires",
+      "Livraison",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 39,
+    "name": "Chauffeur poids lourd",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Conduite sécurisée",
+      "Itinéraires",
+      "Livraison",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 40,
+    "name": "Conducteur SPL",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 41,
+    "name": "Livreur à vélo",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 401,
+    "name": "Livreur",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Package"
+  },
+  {
+    "id": 42,
+    "name": "Coursier",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Optimisation tournée",
+      "Navigation urbaine",
+      "Traçabilité"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 43,
+    "name": "Planificateur transport",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 44,
+    "name": "Exploitant transport",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 45,
+    "name": "Agent d’entrepôt",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 46,
+    "name": "Emballeur / Conditionneur",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 47,
+    "name": "Agent de tri",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 48,
+    "name": "Affréteur",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 49,
+    "name": "Opérateur de transpalette électrique",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Diagnostic",
+      "Maintenance de premier niveau",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 50,
+    "name": "Responsable logistique",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Traçabilité"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 51,
+    "name": "Technicien logistique",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Diagnostic",
+      "Maintenance de premier niveau",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 52,
+    "name": "Dispatcher",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 53,
+    "name": "Agent réception / expédition",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 54,
+    "name": "Chef d’équipe logistique",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 55,
+    "name": "Contrôleur colis",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 56,
+    "name": "Conducteur VTC",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Carte VTC",
+      "Relation client premium",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 57,
+    "name": "Chauffeur de bus",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Conduite sécurisée",
+      "Itinéraires",
+      "Livraison",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 58,
+    "name": "Chauffeur de car",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Conduite sécurisée",
+      "Itinéraires",
+      "Livraison",
+      "Traçabilité"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 59,
+    "name": "Agent d’exploitation",
+    "category": "Logistique & Transport",
+    "skills": [
+      "Organisation",
+      "Sécurité au travail",
+      "Port de charges",
+      "Travail en 2x8/3x8",
+      "Adaptabilité",
+      "Communication",
+      "Traçabilité"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Truck"
+  },
+  {
+    "id": 60,
+    "name": "Maçon",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Coffrage",
+      "Gros œuvre",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 61,
+    "name": "Plombier",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Brasage",
+      "Réseaux eau",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 62,
+    "name": "Électricien",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Câblage",
+      "Norme NFC 15-100",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 63,
+    "name": "Peintre en bâtiment",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Préparation supports",
+      "Finitions",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 64,
+    "name": "Menuisier",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Pose de menuiseries",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 65,
+    "name": "Serrurier",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 66,
+    "name": "Couvreur",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Étanchéité",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 67,
+    "name": "Chauffagiste",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Thermique",
+      "Chaudières",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 68,
+    "name": "Carreleur",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 69,
+    "name": "Plâtrier",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 70,
+    "name": "Charpentier",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 71,
+    "name": "Chef de chantier",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 72,
+    "name": "Manœuvre BTP",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 73,
+    "name": "Conducteur d’engins",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 74,
+    "name": "Terrassier",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 75,
+    "name": "Technicien de maintenance",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Diagnostic",
+      "Maintenance de premier niveau",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 76,
+    "name": "Frigoriste",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Froid commercial",
+      "Manipulation fluides",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 77,
+    "name": "Installateur photovoltaïque",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 78,
+    "name": "Poseur de menuiseries",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 79,
+    "name": "Technicien CVC",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Diagnostic",
+      "Maintenance de premier niveau",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 80,
+    "name": "Monteur échafaudage",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 81,
+    "name": "Étancheur",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 82,
+    "name": "Façadier",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 83,
+    "name": "Ingénieur travaux",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Conception technique",
+      "Revue de code",
+      "Intempéries"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 84,
+    "name": "Conducteur de travaux",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 85,
+    "name": "Métreur",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 86,
+    "name": "Diagnostiqueur immobilier",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 87,
+    "name": "Chef d’équipe BTP",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 88,
+    "name": "Électricien industriel",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Câblage",
+      "Norme NFC 15-100",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 89,
+    "name": "Soudeur bâtiment",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Soudure MIG/MAG",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 90,
+    "name": "Automaticien bâtiment",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 91,
+    "name": "Ascensoriste",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 92,
+    "name": "Technicien fibre optique",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Raccordement",
+      "Mesures réflectométriques",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 93,
+    "name": "Câbleur",
+    "category": "BTP / Maintenance / Énergie",
+    "skills": [
+      "Lecture de plans",
+      "Sécurité chantier",
+      "Travail en hauteur",
+      "Port des EPI",
+      "Adaptabilité",
+      "Communication",
+      "Intempéries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Hammer"
+  },
+  {
+    "id": 94,
+    "name": "Vendeur en magasin",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Conseil client",
+      "Mise en rayon",
+      "Disponibilité week-end"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 95,
+    "name": "Conseiller de vente",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Prospection",
+      "Closing",
+      "Disponibilité week-end"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 96,
+    "name": "Caissier",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Encaissement",
+      "Gestion de caisse",
+      "Disponibilité week-end"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 97,
+    "name": "Responsable de rayon",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Disponibilité week-end"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 98,
+    "name": "Merchandiser",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Adaptabilité",
+      "Communication",
+      "Disponibilité week-end"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 99,
+    "name": "Télévendeur",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Conseil client",
+      "Mise en rayon",
+      "Disponibilité week-end"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 100,
+    "name": "Commercial terrain",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Prospection",
+      "CRM",
+      "Disponibilité week-end"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 101,
+    "name": "Business Developer",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Adaptabilité",
+      "Communication",
+      "Disponibilité week-end"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 102,
+    "name": "Chargé de clientèle",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Adaptabilité",
+      "Communication",
+      "Disponibilité week-end"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 103,
+    "name": "Responsable e-commerce",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Disponibilité week-end"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 104,
+    "name": "Category Manager",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Disponibilité week-end"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 105,
+    "name": "Key Account Manager",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Disponibilité week-end"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 106,
+    "name": "Chef de produit",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Adaptabilité",
+      "Communication",
+      "Disponibilité week-end"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 107,
+    "name": "Community Manager",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Calendrier éditorial",
+      "Modération",
+      "Disponibilité week-end"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 108,
+    "name": "Social Media Manager",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Disponibilité week-end"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 109,
+    "name": "Graphiste marketing",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Suite Adobe",
+      "Création de maquettes",
+      "Disponibilité week-end"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 110,
+    "name": "Copywriter",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Rédaction persuasive",
+      "A/B testing",
+      "Disponibilité week-end"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 111,
+    "name": "Growth Hacker",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Adaptabilité",
+      "Communication",
+      "Disponibilité week-end"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 112,
+    "name": "Chargé de marketing digital",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Adaptabilité",
+      "Communication",
+      "Disponibilité week-end"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 113,
+    "name": "Influenceur partenaire",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Adaptabilité",
+      "Communication",
+      "Disponibilité week-end"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 114,
+    "name": "Chef de projet marketing",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Adaptabilité",
+      "Communication",
+      "Disponibilité week-end"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 115,
+    "name": "Responsable CRM",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Disponibilité week-end"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 116,
+    "name": "Assistant commercial",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Prospection",
+      "CRM",
+      "Organisation dossiers",
+      "Accueil téléphonique"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 117,
+    "name": "Attaché commercial B2B",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Prospection",
+      "CRM",
+      "Disponibilité week-end"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 118,
+    "name": "Conseiller téléphonique",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Prospection",
+      "Closing",
+      "Disponibilité week-end"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 119,
+    "name": "Animateur commercial",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Prospection",
+      "CRM",
+      "Disponibilité week-end"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 120,
+    "name": "Hôte / Hôtesse de caisse",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Adaptabilité",
+      "Communication",
+      "Disponibilité week-end"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 121,
+    "name": "Responsable boutique",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Disponibilité week-end"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 122,
+    "name": "Visual merchandiser",
+    "category": "Commerce / Vente / Marketing",
+    "skills": [
+      "Relation client",
+      "Négociation",
+      "Objectifs de vente",
+      "Reporting CRM",
+      "Adaptabilité",
+      "Communication",
+      "Disponibilité week-end"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "ShoppingCart"
+  },
+  {
+    "id": 123,
+    "name": "Assistant administratif",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Organisation dossiers",
+      "Accueil téléphonique",
+      "Gestion des priorités"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 124,
+    "name": "Secrétaire",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 125,
+    "name": "Assistant de direction",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Organisation dossiers",
+      "Accueil téléphonique",
+      "Gestion des priorités"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 126,
+    "name": "Office Manager",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Gestion des priorités"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 127,
+    "name": "Comptable",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Saisie comptable",
+      "Rapprochements bancaires",
+      "Déclarations TVA",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 128,
+    "name": "Assistant comptable",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Saisie comptable",
+      "Rapprochements bancaires",
+      "Déclarations TVA",
+      "Organisation dossiers"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 129,
+    "name": "Expert-comptable",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Saisie comptable",
+      "Rapprochements bancaires",
+      "Déclarations TVA",
+      "Gestion des priorités"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 130,
+    "name": "Contrôleur de gestion",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 131,
+    "name": "Auditeur",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 132,
+    "name": "Trésorier",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 133,
+    "name": "Analyste financier",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 134,
+    "name": "Gestionnaire paie",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "DSN",
+      "Bulletins de paie",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 135,
+    "name": "Chargé de recouvrement",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 136,
+    "name": "Juriste",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Rédaction contrats",
+      "Veille juridique",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 137,
+    "name": "Avocat",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Conseil",
+      "Plaidoirie",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 138,
+    "name": "Clerc de notaire",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 139,
+    "name": "Notaire",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 140,
+    "name": "Assistant RH",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Organisation dossiers",
+      "Accueil téléphonique",
+      "Gestion des priorités"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 141,
+    "name": "Responsable RH",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Gestion des priorités"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 142,
+    "name": "Gestionnaire administration du personnel",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 143,
+    "name": "Data entry operator",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "SQL",
+      "Analyse statistique",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 144,
+    "name": "Archiviste",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 145,
+    "name": "Standardiste",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 146,
+    "name": "Agent d’accueil",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 147,
+    "name": "PMO – Project Management Officer",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 148,
+    "name": "Assistante juridique",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Organisation dossiers",
+      "Accueil téléphonique",
+      "Gestion des priorités"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 149,
+    "name": "Fiscaliste",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 150,
+    "name": "Assistant facturation",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Organisation dossiers",
+      "Accueil téléphonique",
+      "Gestion des priorités"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 151,
+    "name": "Gestionnaire achats",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 152,
+    "name": "Acheteur",
+    "category": "Administratif / Finance / Juridique",
+    "skills": [
+      "Rigueur",
+      "Confidentialité",
+      "Confidentialité RGPD",
+      "Pack Office",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des priorités"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "FileText"
+  },
+  {
+    "id": 153,
+    "name": "Aide-soignant",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Toilette",
+      "Aide aux repas",
+      "Gestion des urgences"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 154,
+    "name": "Infirmier",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Soins infirmiers",
+      "Protocoles",
+      "DEI",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 155,
+    "name": "Infirmier anesthésiste",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Soins infirmiers",
+      "Protocoles",
+      "DEI",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 156,
+    "name": "Médecin généraliste",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Diagnostic",
+      "Prescription",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 157,
+    "name": "Médecin spécialiste",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Diagnostic",
+      "Prescription",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 158,
+    "name": "Kinésithérapeute",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Rééducation",
+      "Bilan kiné",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 159,
+    "name": "Psychologue",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 160,
+    "name": "Ergothérapeute",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 161,
+    "name": "Sage-femme",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 162,
+    "name": "Pharmacien",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 163,
+    "name": "Préparateur en pharmacie",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 164,
+    "name": "Auxiliaire de vie",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 165,
+    "name": "Éducateur spécialisé",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 166,
+    "name": "Moniteur-éducateur",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 167,
+    "name": "Assistant social",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Organisation dossiers",
+      "Accueil téléphonique",
+      "Gestion des urgences"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 168,
+    "name": "Orthophoniste",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Rééducation du langage",
+      "Évaluation",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 169,
+    "name": "Psychomotricien",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 170,
+    "name": "Dentiste",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 171,
+    "name": "Assistante dentaire",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Organisation dossiers",
+      "Accueil téléphonique",
+      "Gestion des urgences"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 172,
+    "name": "Opticien",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 173,
+    "name": "Ostéopathe",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 174,
+    "name": "Diététicien",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 175,
+    "name": "Ambulancier",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Transport sanitaire",
+      "Gestes d'urgence",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 176,
+    "name": "Brancardier",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 177,
+    "name": "Professeur des écoles",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 178,
+    "name": "Enseignant secondaire",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 179,
+    "name": "Formateur professionnel",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 180,
+    "name": "Coach scolaire",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 181,
+    "name": "Assistant maternel / Nounou",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Organisation dossiers",
+      "Accueil téléphonique",
+      "Gestion des urgences"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 182,
+    "name": "Animateur périscolaire",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 183,
+    "name": "Surveillant",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Adaptabilité",
+      "Communication",
+      "Gestion des urgences"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 184,
+    "name": "Conseiller d’orientation",
+    "category": "Santé / Social / Éducation",
+    "skills": [
+      "Empathie",
+      "Éthique",
+      "Protocoles d'hygiène",
+      "Écoute active",
+      "Prospection",
+      "Closing",
+      "Gestion des urgences"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "HeartPulse"
+  },
+  {
+    "id": 185,
+    "name": "Développeur front-end",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Programmation",
+      "Git",
+      "Revue de code",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 186,
+    "name": "Développeur back-end",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Programmation",
+      "Git",
+      "Revue de code",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 187,
+    "name": "Développeur full-stack",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Programmation",
+      "Git",
+      "Revue de code",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 188,
+    "name": "Développeur mobile",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Programmation",
+      "Git",
+      "Revue de code",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 189,
+    "name": "Ingénieur DevOps",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "CI/CD",
+      "IaC",
+      "Revues de code"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 190,
+    "name": "Data analyst",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "SQL",
+      "Analyse statistique",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 191,
+    "name": "Data scientist",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "SQL",
+      "Analyse statistique",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 192,
+    "name": "Ingénieur IA",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Conception technique",
+      "Revue de code",
+      "Revues de code"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 193,
+    "name": "Architecte logiciel",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Adaptabilité",
+      "Communication",
+      "Revues de code"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 194,
+    "name": "UX/UI Designer",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Wireframes",
+      "Tests utilisateurs",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 195,
+    "name": "Product Manager",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Roadmap",
+      "Backlog",
+      "Discovery",
+      "Revues de code"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 196,
+    "name": "Scrum Master",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Adaptabilité",
+      "Communication",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 197,
+    "name": "QA Tester",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Tests fonctionnels",
+      "Automatisation",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 198,
+    "name": "Ingénieur QA",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Tests fonctionnels",
+      "Automatisation",
+      "Revues de code"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 199,
+    "name": "Technicien support informatique",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Ticketing",
+      "Diagnostic",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 200,
+    "name": "Administrateur systèmes",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Adaptabilité",
+      "Communication",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 201,
+    "name": "Administrateur réseau",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Adaptabilité",
+      "Communication",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 202,
+    "name": "Ingénieur sécurité",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Conception technique",
+      "Revue de code",
+      "Revues de code"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 203,
+    "name": "Pentester",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Adaptabilité",
+      "Communication",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 204,
+    "name": "Ingénieur cloud",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Conception technique",
+      "Revue de code",
+      "Revues de code"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 205,
+    "name": "No-code maker",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Adaptabilité",
+      "Communication",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 206,
+    "name": "Intégrateur web",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Adaptabilité",
+      "Communication",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 207,
+    "name": "Chef de projet IT",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Adaptabilité",
+      "Communication",
+      "Revues de code"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 208,
+    "name": "Spécialiste SEO",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Adaptabilité",
+      "Communication",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 209,
+    "name": "Spécialiste SEA",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Adaptabilité",
+      "Communication",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 210,
+    "name": "Rédacteur technique",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "SEO",
+      "Orthographe irréprochable",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 211,
+    "name": "Analyste fonctionnel",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Adaptabilité",
+      "Communication",
+      "Revues de code"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 212,
+    "name": "Ingénieur data",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "SQL",
+      "Analyse statistique",
+      "Revues de code"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 213,
+    "name": "Ingénieur logiciel embarqué",
+    "category": "Informatique / Numérique",
+    "skills": [
+      "Résolution de problèmes",
+      "Collaboration",
+      "Méthodes agiles",
+      "Documentation",
+      "Conception technique",
+      "Revue de code",
+      "Revues de code"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Cpu"
+  },
+  {
+    "id": 214,
+    "name": "Graphiste",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Suite Adobe",
+      "Création de maquettes",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 215,
+    "name": "Illustrateur",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 216,
+    "name": "Directeur artistique",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Pilotage P&L",
+      "Management d'équipes",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 217,
+    "name": "Photographe",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Prise de vue",
+      "Retouche",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 218,
+    "name": "Vidéaste",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Tournage",
+      "Montage",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 219,
+    "name": "Monteur vidéo",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 220,
+    "name": "Motion designer",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "After Effects",
+      "Animation 2D/3D",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 221,
+    "name": "Sound designer",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 222,
+    "name": "Musicien",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 223,
+    "name": "Compositeur",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 224,
+    "name": "Rédacteur",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "SEO",
+      "Orthographe irréprochable",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 225,
+    "name": "Journaliste",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 226,
+    "name": "Scénariste",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 227,
+    "name": "Régisseur",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 228,
+    "name": "Chargé de production",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Roadmap",
+      "Backlog",
+      "Discovery",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 229,
+    "name": "Community builder",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Calendrier éditorial",
+      "Modération",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 230,
+    "name": "Concepteur-rédacteur",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "SEO",
+      "Orthographe irréprochable",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 231,
+    "name": "Styliste",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 232,
+    "name": "Maquilleur",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 233,
+    "name": "Costumier",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 234,
+    "name": "Décorateur",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 235,
+    "name": "Curateur d’exposition",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 236,
+    "name": "Animateur 2D/3D",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 237,
+    "name": "Game designer",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 238,
+    "name": "Level designer",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 239,
+    "name": "Chef opérateur",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Diagnostic",
+      "Maintenance de premier niveau",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 240,
+    "name": "Ingénieur du son",
+    "category": "Création / Médias / Culture",
+    "skills": [
+      "Créativité",
+      "Storytelling",
+      "Brief client",
+      "Respect des deadlines",
+      "Conception technique",
+      "Revue de code",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Palette"
+  },
+  {
+    "id": 241,
+    "name": "Agriculteur",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 242,
+    "name": "Ouvrier agricole",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 243,
+    "name": "Maraîcher",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 244,
+    "name": "Viticulteur",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 245,
+    "name": "Apiculteur",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 246,
+    "name": "Éleveur",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 247,
+    "name": "Jardinier",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 248,
+    "name": "Paysagiste",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 249,
+    "name": "Forestier",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 250,
+    "name": "Technicien environnement",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Diagnostic",
+      "Maintenance de premier niveau",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 251,
+    "name": "Garde forestier",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 252,
+    "name": "Chargé d’études environnement",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 253,
+    "name": "Hydrobiologiste",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 254,
+    "name": "Agent d’assainissement",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 255,
+    "name": "Chef de culture",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 256,
+    "name": "Pépiniériste",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 257,
+    "name": "Technicien traitement de l’eau",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Diagnostic",
+      "Maintenance de premier niveau",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 258,
+    "name": "Gestionnaire de déchets",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 259,
+    "name": "Chargé RSE",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 260,
+    "name": "Conseiller agricole",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Prospection",
+      "Closing",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 261,
+    "name": "Technicien HSE",
+    "category": "Agriculture / Environnement",
+    "skills": [
+      "Résistance physique",
+      "Respect des normes",
+      "Travail en extérieur",
+      "Saisonnalité",
+      "Diagnostic",
+      "Maintenance de premier niveau",
+      "Manutention"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Leaf"
+  },
+  {
+    "id": 262,
+    "name": "Agent de sécurité",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "SSIAP",
+      "Gestion conflits",
+      "Vérification d'accès"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 263,
+    "name": "Vigile",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Adaptabilité",
+      "Communication",
+      "Vérification d'accès"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 264,
+    "name": "Maître-chien",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Adaptabilité",
+      "Communication",
+      "Vérification d'accès"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 265,
+    "name": "Gardien d’immeuble",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Adaptabilité",
+      "Communication",
+      "Vérification d'accès"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 266,
+    "name": "Surveillant de nuit",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Adaptabilité",
+      "Communication",
+      "Vérification d'accès"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 267,
+    "name": "Sapeur-pompier",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Incendie",
+      "Secours",
+      "Vérification d'accès"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 268,
+    "name": "Secouriste",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Adaptabilité",
+      "Communication",
+      "Vérification d'accès"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 269,
+    "name": "Agent de sûreté aéroportuaire",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Adaptabilité",
+      "Communication",
+      "Vérification d'accès"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 270,
+    "name": "Policier",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Adaptabilité",
+      "Communication",
+      "Vérification d'accès"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 271,
+    "name": "Gendarme",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Adaptabilité",
+      "Communication",
+      "Vérification d'accès"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 272,
+    "name": "Militaire",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Adaptabilité",
+      "Communication",
+      "Vérification d'accès"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 273,
+    "name": "Opérateur drone de surveillance",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Diagnostic",
+      "Maintenance de premier niveau",
+      "Vérification d'accès"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 274,
+    "name": "Contrôleur sûreté",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Adaptabilité",
+      "Communication",
+      "Vérification d'accès"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 275,
+    "name": "Agent SSIAP",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Adaptabilité",
+      "Communication",
+      "Vérification d'accès"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 276,
+    "name": "Agent de prévention et sécurité",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Adaptabilité",
+      "Communication",
+      "Vérification d'accès"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 277,
+    "name": "Opérateur vidéosurveillance",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Diagnostic",
+      "Maintenance de premier niveau",
+      "Vérification d'accès"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 278,
+    "name": "Patrouilleur",
+    "category": "Sécurité / Défense / Urgence",
+    "skills": [
+      "Sang-froid",
+      "Observation",
+      "Rondes",
+      "Main courante",
+      "Adaptabilité",
+      "Communication",
+      "Vérification d'accès"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Shield"
+  },
+  {
+    "id": 279,
+    "name": "Soudeur",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Soudure MIG/MAG",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 280,
+    "name": "Tourneur-fraiseur",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 281,
+    "name": "Opérateur CNC",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Pilotage CN",
+      "Contrôle dimensionnel",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 282,
+    "name": "Technicien de production",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Roadmap",
+      "Backlog",
+      "Discovery",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 283,
+    "name": "Contrôleur qualité",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 284,
+    "name": "Ajusteur-monteur",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 285,
+    "name": "Tailleur / Couturier",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 286,
+    "name": "Bijoutier",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 287,
+    "name": "Horloger",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 288,
+    "name": "Menuisier d’art",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Lecture de plans",
+      "Pose de menuiseries"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 289,
+    "name": "Potier",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 290,
+    "name": "Peintre industriel",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Préparation supports",
+      "Finitions",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 291,
+    "name": "Opérateur de ligne",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Diagnostic",
+      "Maintenance de premier niveau",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 292,
+    "name": "Conducteur de machine",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 293,
+    "name": "Packaging operator",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 294,
+    "name": "Opérateur plasturgie",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Diagnostic",
+      "Maintenance de premier niveau",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 295,
+    "name": "Technicien méthodes",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Diagnostic",
+      "Maintenance de premier niveau",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 296,
+    "name": "Ingénieur production",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Roadmap",
+      "Backlog",
+      "Discovery",
+      "Lecture de plans"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 297,
+    "name": "Chef d’atelier",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 298,
+    "name": "Modeleur",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 299,
+    "name": "Forgeron",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 300,
+    "name": "Tôlier",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 301,
+    "name": "Chaudronnier",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 302,
+    "name": "Fraiseur",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 303,
+    "name": "Ébéniste",
+    "category": "Artisanat / Industrie / Fabrication",
+    "skills": [
+      "Dextérité",
+      "Qualité",
+      "Cadences",
+      "Contrôle qualité",
+      "Adaptabilité",
+      "Communication",
+      "Lecture de plans"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Factory"
+  },
+  {
+    "id": 304,
+    "name": "Coach sportif",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Programmes personnalisés",
+      "Prévention blessures",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 305,
+    "name": "Éducateur sportif",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 306,
+    "name": "Moniteur de ski",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 307,
+    "name": "Moniteur de surf",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 308,
+    "name": "Guide touristique",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 309,
+    "name": "Accompagnateur de randonnée",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 310,
+    "name": "Animateur loisirs",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 311,
+    "name": "Maître-nageur sauveteur",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Surveillance bassin",
+      "BNSSA",
+      "Prévention des risques"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 312,
+    "name": "Prof de yoga",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 313,
+    "name": "Coach bien-être",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 314,
+    "name": "Agent de voyages",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Prévention des risques"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 315,
+    "name": "Conseiller touristique",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Prospection",
+      "Closing",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 316,
+    "name": "Chargé d’animation camping",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 317,
+    "name": "Photographe touristique",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Prise de vue",
+      "Retouche",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 318,
+    "name": "Guide de musée",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 319,
+    "name": "Responsable parc de loisirs",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Prévention des risques"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 320,
+    "name": "Patrouilleur piste",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 321,
+    "name": "Réceptionniste camping",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Gestion des réservations",
+      "Check-in / Check-out",
+      "Outils PMS",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 322,
+    "name": "Responsable billetterie",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Prévention des risques"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 323,
+    "name": "Guide nature",
+    "category": "Sports / Loisirs / Tourisme",
+    "skills": [
+      "Pédagogie",
+      "Sécurité",
+      "Encadrement de groupe",
+      "Saisonnalité",
+      "Adaptabilité",
+      "Communication",
+      "Prévention des risques"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Bike"
+  },
+  {
+    "id": 324,
+    "name": "Directeur général",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Pilotage P&L",
+      "Management d'équipes",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 325,
+    "name": "Directeur financier",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Pilotage P&L",
+      "Management d'équipes",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 326,
+    "name": "Directeur marketing",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Pilotage P&L",
+      "Management d'équipes",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 327,
+    "name": "Directeur commercial",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Prospection",
+      "Négociation",
+      "CRM",
+      "Pilotage P&L"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 328,
+    "name": "Directeur des opérations",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Pilotage P&L",
+      "Management d'équipes",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 329,
+    "name": "Directeur industriel",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Pilotage P&L",
+      "Management d'équipes",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 330,
+    "name": "DRH",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Adaptabilité",
+      "Communication",
+      "Conduite du changement"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 331,
+    "name": "CTO",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Adaptabilité",
+      "Communication",
+      "Conduite du changement"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 332,
+    "name": "CPO",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Adaptabilité",
+      "Communication",
+      "Conduite du changement"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 333,
+    "name": "COO",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Adaptabilité",
+      "Communication",
+      "Conduite du changement"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 334,
+    "name": "CEO",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Adaptabilité",
+      "Communication",
+      "Conduite du changement"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 335,
+    "name": "Chef de projet senior",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Adaptabilité",
+      "Communication",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 336,
+    "name": "Responsable de site",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 337,
+    "name": "Responsable d’exploitation",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 338,
+    "name": "Responsable qualité",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 339,
+    "name": "Responsable service client",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 340,
+    "name": "Directeur de magasin",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Pilotage P&L",
+      "Management d'équipes",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 341,
+    "name": "Responsable achats",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 342,
+    "name": "Directeur technique",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Pilotage P&L",
+      "Management d'équipes",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 343,
+    "name": "Chef de bureau",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Adaptabilité",
+      "Communication",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 344,
+    "name": "Responsable communication",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 345,
+    "name": "Responsable innovation",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 346,
+    "name": "Chef d’agence",
+    "category": "Direction / Management",
+    "skills": [
+      "Leadership",
+      "Vision stratégique",
+      "Pilotage KPI",
+      "Arbitrage budgétaire",
+      "Adaptabilité",
+      "Communication",
+      "Conduite du changement"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "Briefcase"
+  },
+  {
+    "id": 347,
+    "name": "Développeur freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Programmation",
+      "Git",
+      "Revue de code",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 348,
+    "name": "Développeur Webflow",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Programmation",
+      "Git",
+      "Revue de code",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 349,
+    "name": "Intégrateur WordPress",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 350,
+    "name": "No-code maker freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 351,
+    "name": "Data analyst freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "SQL",
+      "Analyse statistique",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 352,
+    "name": "Data engineer freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "SQL",
+      "Analyse statistique",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 353,
+    "name": "UX/UI Designer freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Wireframes",
+      "Tests utilisateurs",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 354,
+    "name": "Product Designer freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Roadmap",
+      "Backlog",
+      "Discovery",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 355,
+    "name": "Chef de projet digital freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 356,
+    "name": "DevOps freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "CI/CD",
+      "IaC",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 357,
+    "name": "Architecte cloud freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 358,
+    "name": "Consultant cybersécurité freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 359,
+    "name": "Consultant SEO freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 360,
+    "name": "Consultant SEA / Ads freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 361,
+    "name": "Media Buyer freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 362,
+    "name": "Growth Marketer freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 363,
+    "name": "Community Manager freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Calendrier éditorial",
+      "Modération",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 364,
+    "name": "Copywriter freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Rédaction persuasive",
+      "A/B testing",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 365,
+    "name": "Rédacteur web SEO freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "SEO",
+      "Orthographe irréprochable",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 366,
+    "name": "Traducteur freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 367,
+    "name": "Storyteller freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 368,
+    "name": "Graphiste freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Suite Adobe",
+      "Création de maquettes",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 369,
+    "name": "Illustrateur freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 370,
+    "name": "Motion Designer freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "After Effects",
+      "Animation 2D/3D",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 371,
+    "name": "Vidéaste freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Tournage",
+      "Montage",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 372,
+    "name": "Monteur vidéo freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 373,
+    "name": "Photographe freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Prise de vue",
+      "Retouche",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 374,
+    "name": "Voice-over freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 375,
+    "name": "Sound designer freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 376,
+    "name": "Artiste 3D freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 377,
+    "name": "Consultant stratégie freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 378,
+    "name": "Consultant finance freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 379,
+    "name": "Comptable indépendant",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Saisie comptable",
+      "Rapprochements bancaires",
+      "Déclarations TVA",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 380,
+    "name": "Office Manager freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Pilotage d'équipes",
+      "Gestion budget",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 381,
+    "name": "Assistant virtuel freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Organisation dossiers",
+      "Accueil téléphonique",
+      "Autonomie"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 382,
+    "name": "PMO freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 383,
+    "name": "Wedding planner",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "intermédiaire",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 384,
+    "name": "Event planner freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 385,
+    "name": "Traiteur indépendant",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 386,
+    "name": "Chauffeur VTC indépendant",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Conduite sécurisée",
+      "Itinéraires",
+      "Livraison",
+      "Carte VTC",
+      "Relation client premium",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 387,
+    "name": "Livreur indépendant",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 388,
+    "name": "Coursier indépendant",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Optimisation tournée",
+      "Navigation urbaine",
+      "Autonomie"
+    ],
+    "level": "débutant",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 389,
+    "name": "Plombier indépendant",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Brasage",
+      "Réseaux eau",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 390,
+    "name": "Électricien indépendant",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Câblage",
+      "Norme NFC 15-100",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 391,
+    "name": "Menuisier indépendant",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Lecture de plans",
+      "Pose de menuiseries",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 392,
+    "name": "Peintre indépendant",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Préparation supports",
+      "Finitions",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 393,
+    "name": "Maçon indépendant",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Coffrage",
+      "Gros œuvre",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 394,
+    "name": "Jardinier paysagiste indépendant",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 395,
+    "name": "Coach sportif freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Programmes personnalisés",
+      "Prévention blessures",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 396,
+    "name": "Prof de yoga freelance",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 397,
+    "name": "Diététicien libéral",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 398,
+    "name": "Psychologue libéral",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 399,
+    "name": "Ostéopathe libéral",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Adaptabilité",
+      "Communication",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  },
+  {
+    "id": 400,
+    "name": "Kinésithérapeute libéral",
+    "category": "Freelance & Indépendants",
+    "skills": [
+      "Gestion client",
+      "Devis & Facturation",
+      "Rééducation",
+      "Bilan kiné",
+      "Autonomie"
+    ],
+    "level": "expert",
+    "urgency_tags": [
+      "On Fire",
+      "Disponible",
+      "Freeze"
+    ],
+    "icon": "UserRoundCheck"
+  }
+]

@@ -1,0 +1,19 @@
+-- Migration: Ajout des colonnes pour l'onboarding
+-- Exécutez ce SQL dans votre Supabase SQL Editor
+
+-- Ajouter les colonnes pour l'onboarding
+ALTER TABLE public.services 
+ADD COLUMN IF NOT EXISTS owner_email TEXT,
+ADD COLUMN IF NOT EXISTS owner_user_id UUID REFERENCES auth.users(id) ON DELETE SET NULL,
+ADD COLUMN IF NOT EXISTS status TEXT DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'rejected')),
+ADD COLUMN IF NOT EXISTS location TEXT,
+ADD COLUMN IF NOT EXISTS avatar_url TEXT,
+ADD COLUMN IF NOT EXISTS onboarding_data JSONB DEFAULT '{}';
+
+-- Index pour les recherches par owner
+CREATE INDEX IF NOT EXISTS idx_services_owner_email ON public.services(owner_email);
+CREATE INDEX IF NOT EXISTS idx_services_owner_user_id ON public.services(owner_user_id);
+CREATE INDEX IF NOT EXISTS idx_services_status ON public.services(status);
+
+-- Mettre à jour les services existants avec status 'approved'
+UPDATE public.services SET status = 'approved' WHERE status IS NULL;

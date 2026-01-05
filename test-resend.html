@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Test Connexion Resend</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    button {
+      background: #3b82f6;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #2563eb;
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      display: none;
+    }
+    .success {
+      background: #d1fae5;
+      border: 1px solid #10b981;
+      color: #065f46;
+    }
+    .error {
+      background: #fee2e2;
+      border: 1px solid #ef4444;
+      color: #991b1b;
+    }
+    .dev {
+      background: #fef3c7;
+      border: 1px solid #f59e0b;
+      color: #92400e;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔌 Test de connexion Resend</h1>
+  <p>Entre ton email pour tester l'envoi d'un code de vérification :</p>
+
+  <input type="email" id="emailInput" placeholder="ton@email.com" />
+  <button onclick="testResend()" id="testBtn">Tester l'envoi</button>
+
+  <div id="result" class="result"></div>
+
+  <script>
+    const SUPABASE_URL = 'https://wxxansemobnyvvdnhmyg.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind4eGFuc2Vtb2JueXZ2ZG5obXlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE0NjQ2NzksImV4cCI6MjA3NzA0MDY3OX0.CLsOgFLYR5xF91JeZZCWb_dD4YAuKVtfZ2vUJdj0_VE';
+
+    async function testResend() {
+      const email = document.getElementById('emailInput').value;
+      const btn = document.getElementById('testBtn');
+      const result = document.getElementById('result');
+
+      if (!email || !email.includes('@')) {
+        result.className = 'result error';
+        result.style.display = 'block';
+        result.innerHTML = '❌ Email invalide';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Envoi en cours...';
+      result.style.display = 'none';
+
+      try {
+        const response = await fetch(`${SUPABASE_URL}/functions/v1/send-verification-code`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: email,
+            type: 'create'
+          })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          if (data.devCode) {
+            // Mode développement
+            result.className = 'result dev';
+            result.innerHTML = `
+              <h3>⚠️ Mode Développement</h3>
+              <p><strong>RESEND_API_KEY non configuré</strong></p>
+              <p>Le code n'est PAS envoyé par email.</p>
+              <p>Code généré : <strong style="font-size: 24px; font-family: monospace;">${data.devCode}</strong></p>
+              <hr>
+              <p><strong>Pour activer Resend :</strong></p>
+              <ol>
+                <li>Va sur <a href="https://resend.com" target="_blank">resend.com</a></li>
+                <li>Crée un compte et génère une API key</li>
+                <li>Configure dans Supabase : Settings → Edge Functions → Secrets</li>
+                <li>Ajoute : RESEND_API_KEY et RESEND_FROM_EMAIL</li>
+              </ol>
+            `;
+          } else {
+            // Resend actif
+            result.className = 'result success';
+            result.innerHTML = `
+              <h3>✅ Connexion Resend OK !</h3>
+              <p>Un email a été envoyé à <strong>${email}</strong></p>
+              <p>Vérifie ta boîte de réception (et spam).</p>
+            `;
+          }
+        } else {
+          result.className = 'result error';
+          result.innerHTML = `❌ Erreur : ${data.error}`;
+        }
+
+        result.style.display = 'block';
+      } catch (error) {
+        result.className = 'result error';
+        result.innerHTML = `❌ Erreur réseau : ${error.message}`;
+        result.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Tester l\'envoi';
+      }
+    }
+  </script>
+</body>
+</html>
