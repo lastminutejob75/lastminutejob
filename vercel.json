@@ -1,4 +1,11 @@
 {
+<<<<<<< HEAD
+  "buildCommand": "cd uwi && npm run build",
+  "installCommand": "cd uwi && npm install",
+  "framework": "nextjs"
+}
+
+=======
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
@@ -33,3 +40,4 @@
     }
   ]
 }
+>>>>>>> f8de2ef9be6c4a391709abbb5767e88b2caa805f

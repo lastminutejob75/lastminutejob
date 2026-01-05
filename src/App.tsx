@@ -2989,32 +2989,44 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
         </Section>
       </header>
 
-      <Section className="pt-6 sm:pt-10 pb-12 sm:pb-16 grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
-        <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-600 mb-4">
-            <Sparkles size={14} className="text-orange-500" /> <UWiLogo size="sm" /> — assistante IA pour le travail express
+      <Section className="pt-6 sm:pt-10 pb-12 sm:pb-16">
+        <div className="text-center max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-gradient-to-r from-blue-50 to-orange-50 px-4 py-2 text-xs font-medium text-slate-700 mb-6 animate-pulse">
+            <Sparkles size={14} className="text-blue-600 animate-spin" style={{ animationDuration: '3s' }} /> 
+            <UWiLogo size="sm" /> 
+            <span className="whitespace-nowrap">Agent RH IA • Recrutement express</span>
           </div>
-          {heroVariant === "A" ? (
-            <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-3">Publiez la <span className="text-blue-600">meilleure annonce</span> en quelques secondes</h1>
-          ) : (
-            <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-3">Décrivez votre besoin, <span className="text-blue-600">on s'occupe du reste</span></h1>
-          )}
-          <p className="text-sm sm:text-base text-slate-600 mb-6"><UWiLogo size="sm" /> génère automatiquement votre annonce professionnelle à partir d'une simple phrase.</p>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+            <UWiLogo size="lg" className="inline-block mr-2" />, votre agent RH intelligent
+          </h1>
+          <p className="text-lg sm:text-xl text-slate-700 mb-2 max-w-2xl mx-auto">
+            Décrivez votre besoin, <strong>UWi crée votre annonce</strong>
+          </p>
+          <p className="text-sm sm:text-base text-slate-600 mb-8 max-w-2xl mx-auto">
+            UWi analyse votre besoin et génère une annonce optimisée, professionnelle et prête à publier en moins de 60 secondes.
+          </p>
           <form 
             id="job-form"
             onSubmit={handleSubmit} 
-            className="rounded-xl border border-slate-200 bg-white p-4 sm:p-5 shadow-sm"
+            className="rounded-xl border-2 border-blue-200 bg-white p-4 sm:p-5 shadow-lg max-w-2xl mx-auto"
           >
+            <div className="mb-3">
+              <div className="inline-flex items-center gap-2 text-xs font-medium text-slate-600 mb-2">
+                <Sparkles size={12} className="text-blue-600" />
+                Parlez à UWi comme à un agent RH
+              </div>
+            </div>
             <div className="relative">
               <input 
                 ref={inputRef}
                 value={prompt} 
                 onChange={(e) => setPrompt(e.target.value)}
                 onFocus={() => setShowSuggestions(suggestions.length > 0)}
-                placeholder="De quoi avez-vous besoin ?" 
-                className="w-full rounded-lg border border-slate-300 px-4 py-3 text-base focus:ring-2 focus:ring-blue-200 focus:border-blue-500 outline-none transition-all" 
+                placeholder="Ex: J'ai besoin d'un serveur à Paris ce samedi soir de 18h à 23h" 
+                className="w-full rounded-lg border-2 border-blue-300 px-4 py-4 text-base focus:ring-2 focus:ring-blue-400 focus:border-blue-500 outline-none transition-all pl-10" 
                 data-onboarding="input"
               />
+              <Sparkles size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-500 opacity-60" />
               {/* Suggestions de complétion intelligente améliorées */}
               {showSuggestions && suggestions.length > 0 && (
                 <div className="absolute top-full left-0 right-0 z-10 bg-white border border-slate-200 rounded-lg shadow-lg mt-1 max-h-40 overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200">
@@ -3775,7 +3787,7 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
       <Section id="testimonials" className="py-12">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Ils en parlent</h2>
         <div className="grid md:grid-cols-2 gap-6">
-          <Testimonial quote="UWi m'a fait gagner 2h par jour pour mes recrutements." author="Sophie" role="RH chez FoodExpress" />
+          <Testimonial quote={<><UWiLogo size="sm" /> m'a fait gagner 2h par jour pour mes recrutements.</>} author="Sophie" role="RH chez FoodExpress" />
           <Testimonial quote="Des annonces plus claires, plus efficaces, et de meilleurs candidats." author="Karim" role="Manager logistique" />
         </div>
       </Section>
