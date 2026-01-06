@@ -1228,60 +1228,71 @@ export type IntentType = "need_external" | "personal_search" | "ambiguous";
 export function detectIntent(text: string): IntentType {
   const lower = text.toLowerCase().trim();
 
-  // 1) patterns typiques "je cherche un job / je cherche du travail / extra"
+  // 1) CANDIDAT : patterns typiques "je cherche un job / je cherche du travail / extra"
   if (
-    /je\s+cherche\s+un[e]?\s+(job|poste|emploi|boulot|travail|extra|extras?)/.test(lower) ||
+    /je\s+cherche\s+un[e]?\s+(job|poste|emploi|boulot|travail|extra|extras?|mission)/.test(lower) ||
     /je\s+cherche\s+du\s+travail/.test(lower) ||
-    /a la recherche d'un[e]?\s+(job|poste|emploi)/.test(lower) ||
-    /je\s+cherche\s+(un|des)\s+extra/.test(lower)
+    /a la recherche d'un[e]?\s+(job|poste|emploi|mission)/.test(lower) ||
+    /je\s+cherche\s+(un|des)\s+extra/.test(lower) ||
+    /recherche\s+(un|des)\s+(extra|extras?|mission)/i.test(lower)
   ) {
     return "personal_search";
   }
 
-  // 2) profil perso + dispo / missions
+  // 2) CANDIDAT : profil perso + dispo / missions
   if (
-    /je\s+suis\s+[a-zéèêàîïôûç]+\s+et\s+je\s+cherche/.test(lower) ||
+    /je\s+suis\s+(serveur|serveuse|cuisinier|bartender|barman|livreur|agent|hôte|hôtesse)/i.test(lower) ||
+    /je\s+suis\s+[a-zéèêàîïôûç]+\s+(et|,)\s+(je\s+)?(cherche|dispo|disponible)/.test(lower) ||
     /freelance/.test(lower) && /dispo|disponible|missions?/.test(lower) ||
-    /open to work|open to opportunities/.test(lower)
+    /open to work|open to opportunities/.test(lower) ||
+    /je\s+suis\s+dispo/i.test(lower)
   ) {
     return "personal_search";
   }
 
-  // 3) cas "étudiant / étudiante" spécifique
+  // 3) CANDIDAT : cas "étudiant / étudiante" spécifique
   if (/je\s+suis\s+(une|un)\s+(étudiant|étudiante|etudiante)/i.test(lower)) {
     // si derrière il y a "je cherche un extra / job"
-    if (/je\s+cherche/.test(lower)) {
-      return "personal_search";
-    }
-  }
-  
-  // 3b) cas "je suis étudiante" (sans article)
-  if (/je\s+suis\s+(étudiant|étudiante|etudiante)/i.test(lower)) {
-    // si derrière il y a "je cherche"
-    if (/je\s+cherche/.test(lower)) {
+    if (/je\s+cherche/.test(lower) || /dispo|disponible/.test(lower)) {
       return "personal_search";
     }
   }
 
-  // 4) patterns typiques "je cherche quelqu'un / nous recrutons" → besoin externe
+  // 3b) CANDIDAT : cas "je suis étudiante" (sans article)
+  if (/je\s+suis\s+(étudiant|étudiante|etudiante)/i.test(lower)) {
+    // si derrière il y a "je cherche" ou "dispo"
+    if (/je\s+cherche/.test(lower) || /dispo|disponible/.test(lower)) {
+      return "personal_search";
+    }
+  }
+
+  // 4) RECRUTEUR : patterns typiques "besoin de / cherche quelqu'un / recrutons"
   if (
-    /nous\s+(recherchons|recrutons|cherchons)/.test(lower) ||
-    /on\s+cherche\s+/.test(lower) ||
-    /je\s+cherche\s+(un|une)\s+(serveur|serveuse|cuisinier|développeur|dev|graphiste)/.test(
-      lower
-    ) ||
-    /restaurant|magasin|notre entreprise|mon restaurant|mon client/.test(lower)
+    /besoin\s+(d['']|de)\s*(un|une|des)\s+(serveur|serveuse|cuisinier|bartender|livreur|agent|hôte|vendeur)/i.test(lower) ||
+    /cherche\s+(un|une|des)\s+(serveur|serveuse|cuisinier|bartender|livreur|agent|hôte|vendeur)/i.test(lower) ||
+    /nous\s+(recherchons|recrutons|cherchons|avons besoin)/.test(lower) ||
+    /on\s+(cherche|recrute|a besoin)\s+/.test(lower) ||
+    /recherche\s+(un|une|des)\s+(serveur|serveuse|cuisinier|bartender|livreur|agent)/i.test(lower) ||
+    /restaurant|magasin|notre entreprise|mon restaurant|mon client/.test(lower) && /cherche|besoin|recrut/.test(lower)
   ) {
     return "need_external";
   }
 
-  // 5) si c'est très court ou juste un mot → ambigu
+  // 5) AMBIGU : si c'est très court ou juste un mot
   const tokenCount = lower.split(/\s+/).filter(Boolean).length;
-  if (tokenCount <= 3) {
+  if (tokenCount <= 2) {
     return "ambiguous";
   }
 
-  // 6) fallback : si aucun signal clair → ambiguous
+  // 6) RECRUTEUR par défaut si pattern "besoin" sans métier explicite
+  if (/besoin\s+(d['']|de|d)\s*(un|une)/.test(lower) || /cherche\s+(un|une)/.test(lower)) {
+    // Mais vérifier que ce n'est pas "je cherche un job"
+    if (!/job|poste|emploi|boulot|travail|extra|mission/.test(lower)) {
+      return "need_external";
+    }
+  }
+
+  // 7) fallback : si aucun signal clair → ambiguous
   return "ambiguous";
 }
 

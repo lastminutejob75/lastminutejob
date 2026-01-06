@@ -64,6 +64,8 @@ import { simpleGenerateAnnouncement, convertLLMResponseToDraft, type SimpleAnnou
 import { detectSimpleJob } from './lib/simpleJobs';
 import { orchestrator } from './lib/orchestrator';
 import type { MatchedTalent, OrchestratedResult } from './lib/orchestrator/types';
+import { AdaptiveResult } from './components/AdaptiveResult';
+import { QuickApplyModal, useQuickApplyModal, type QuickApplyData } from './components/QuickApplyModal';
 import { parseLLMResponse } from './lib/llmAnnouncePrompt';
 import jobsDataRaw from './lib/uwi_human_jobs_freelance_varied_skills.json';
 import { enhancedSmartParse } from './lib/smartParser';
@@ -2551,8 +2553,12 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
   const [llmAnnouncement, setLlmAnnouncement] = useState<any | null>(null);
   const [matchedTalents, setMatchedTalents] = useState<MatchedTalent[]>([]);
   const [orchestrationResult, setOrchestrationResult] = useState<OrchestratedResult | null>(null);
+  const [detectedIntent, setDetectedIntent] = useState<IntentType | null>(null);
   const previewRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Modal pour postuler sans compte
+  const quickApplyModal = useQuickApplyModal();
   
   async function generateAnnouncement() {
     if (!prompt.trim()) return;
@@ -2562,61 +2568,84 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
     setIsGenerating(true);
 
     try {
-      // 🎯 NOUVEAU : Utiliser l'orchestrateur unifié
-      console.log("[LMJLanding] 🎯 Orchestration du besoin...");
-      const result = await orchestrator.process(prompt);
+      // 🎯 ÉTAPE 1 : Détecter l'intention
+      const intent = detectIntent(prompt);
+      setDetectedIntent(intent);
+      console.log("[LMJLanding] 🧠 Intention détectée :", intent);
 
-      // Stocker le résultat complet
-      setOrchestrationResult(result);
+      // 🎯 ÉTAPE 2 : Traiter selon l'intention
+      if (intent === 'need_external') {
+        // RECRUTEUR : Utiliser l'orchestrateur
+        console.log("[LMJLanding] 👔 Mode recruteur - Orchestration...");
+        const result = await orchestrator.process(prompt);
 
-      // Extraire le draft
-      setDraft(result.jobDraft);
+        // Stocker les résultats
+        setOrchestrationResult(result);
+        setDraft(result.jobDraft);
+        setMatchedTalents(result.matches);
 
-      // Extraire les talents matchés
-      setMatchedTalents(result.matches);
+        // Compatibilité UI existante
+        const cleanRoleLabel = (result.jobDraft.jobTitle &&
+                                 result.jobDraft.jobTitle.trim() &&
+                                 result.jobDraft.jobTitle !== "Rôle à préciser" &&
+                                 result.jobDraft.jobTitle !== "Rôle à définir")
+          ? result.jobDraft.jobTitle
+          : "";
 
-      // Construire llmAnnouncement pour compatibilité avec l'UI existante
-      const cleanRoleLabel = (result.jobDraft.jobTitle &&
-                               result.jobDraft.jobTitle.trim() &&
-                               result.jobDraft.jobTitle !== "Rôle à préciser" &&
-                               result.jobDraft.jobTitle !== "Rôle à définir")
-        ? result.jobDraft.jobTitle
-        : "";
+        setLlmAnnouncement({
+          type: "need_someone",
+          role_label: cleanRoleLabel,
+          short_context: result.jobDraft.description,
+          location: result.jobDraft.location || null,
+          sections: [
+            { title: "Missions", items: result.jobDraft.missions },
+            { title: "Prérequis", items: result.jobDraft.requirements }
+          ]
+        });
 
-      setLlmAnnouncement({
-        type: "need_someone",
-        role_label: cleanRoleLabel,
-        short_context: result.jobDraft.description,
-        location: result.jobDraft.location || null,
-        sections: [
-          { title: "Missions", items: result.jobDraft.missions },
-          { title: "Prérequis", items: result.jobDraft.requirements }
-        ]
-      });
+        track("uwi_preview_generated_recruiter", {
+          matches: result.totalMatches,
+          confidence: result.confidence,
+          orchestrationTime: result.stats.totalTime
+        });
+
+        console.log(`[LMJLanding] ✅ Orchestration terminée :`, {
+          matches: result.totalMatches,
+          confidence: result.confidence
+        });
+
+      } else if (intent === 'personal_search') {
+        // CANDIDAT : Pas besoin d'orchestrateur, juste afficher les missions
+        console.log("[LMJLanding] 👤 Mode candidat - Recherche de missions...");
+
+        // Stocker l'intent pour afficher l'AdaptiveResult
+        setDraft(null); // Pas de draft pour candidat
+        setMatchedTalents([]); // On affichera les missions dans TalentResult
+
+        track("uwi_preview_generated_talent", {
+          prompt: prompt.substring(0, 50)
+        });
+
+      } else {
+        // AMBIGUË : L'AdaptiveResult affichera la clarification
+        console.log("[LMJLanding] 🤔 Intention ambiguë - Demande de clarification");
+        setDraft(null);
+        setMatchedTalents([]);
+
+        track("uwi_preview_ambiguous");
+      }
 
       setSubmitted(true);
-      track("uwi_preview_generated", {
-        matches: result.totalMatches,
-        confidence: result.confidence,
-        orchestrationTime: result.stats.totalTime
-      });
-
-      // Log pour debug
-      console.log(`[LMJLanding] ✅ Orchestration terminée :`, {
-        matches: result.totalMatches,
-        confidence: result.confidence,
-        estimatedTime: result.estimatedTime,
-        stats: result.stats
-      });
 
     } catch (e) {
-      console.error("[generateAnnouncement] ❌ Erreur orchestrateur:", e);
-      // En cas d'erreur, utiliser le fallback simple
+      console.error("[generateAnnouncement] ❌ Erreur:", e);
+
+      // Fallback : considérer comme recruteur par défaut
       const { simpleGenerateAnnouncement } = await import("./lib/simpleAnnounce");
       const fallbackDraft = simpleGenerateAnnouncement(prompt);
       setDraft(fallbackDraft);
+      setDetectedIntent('need_external');
 
-      // Fallback minimal pour llmAnnouncement
       const cleanRoleLabel = (fallbackDraft.jobTitle &&
                                fallbackDraft.jobTitle.trim() &&
                                fallbackDraft.jobTitle !== "Rôle à préciser" &&
@@ -2638,14 +2667,76 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
       setIsGenerating(false);
     }
   }
-  
+
+  // 🎯 Handlers pour les CTAs adaptatifs
+
+  // Clarifier l'intention
+  function handleClarifyIntent(clarifiedIntent: 'need_external' | 'personal_search') {
+    console.log("[LMJLanding] ✅ Intention clarifiée :", clarifiedIntent);
+    setDetectedIntent(clarifiedIntent);
+
+    // Relancer la génération avec la bonne intention
+    if (clarifiedIntent === 'need_external') {
+      generateAnnouncement();
+    } else {
+      // Pour candidat, juste afficher les missions
+      setSubmitted(true);
+    }
+  }
+
+  // Publier une annonce SANS compte
+  async function handlePublishWithoutAccount() {
+    console.log("[LMJLanding] 📤 Publication sans compte");
+    // TODO: Implémenter la logique de publication
+    // Pour l'instant, juste afficher un message de succès
+    alert("Annonce publiée ! Nous vous recontacterons par email si des talents correspondent.");
+    track("publish_without_account", {
+      hasMatches: matchedTalents.length > 0
+    });
+  }
+
+  // Créer un compte recruteur
+  function handleCreateRecruiterAccount() {
+    console.log("[LMJLanding] 👔 Création compte recruteur");
+    // TODO: Rediriger vers formulaire d'inscription recruteur
+    window.location.hash = "#/signup?type=recruiter";
+    track("create_recruiter_account_clicked");
+  }
+
+  // Postuler à une mission SANS compte
+  async function handleApplyWithoutAccount(missionId: string) {
+    console.log("[LMJLanding] 📬 Ouverture modal postulation:", missionId);
+    quickApplyModal.openModal(missionId, "Mission", "Employeur");
+    track("apply_without_account_started", { missionId });
+  }
+
+  // Soumettre la candidature
+  async function handleSubmitApplication(data: QuickApplyData) {
+    console.log("[LMJLanding] 📮 Soumission candidature:", data);
+    // TODO: Envoyer la candidature à l'API
+    // Simulation d'envoi
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    track("application_submitted", {
+      hasMessage: !!data.message
+    });
+  }
+
+  // Créer un profil talent
+  function handleCreateTalentProfile() {
+    console.log("[LMJLanding] 👤 Création profil talent");
+    // TODO: Rediriger vers formulaire d'inscription talent
+    window.location.hash = "#/signup?type=talent";
+    track("create_talent_profile_clicked");
+  }
+
   // Handler pour le submit du formulaire
   function handleSubmit(e?: React.FormEvent) {
     if (e) {
       e.preventDefault();
     }
     if (!prompt.trim()) return;
-    
+
     // 🔥 v1 WOW : on envoie TOUT au LLM
     generateAnnouncement();
   }
@@ -3237,8 +3328,22 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
           </div>
         </div>
         <div>
-          <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm" ref={previewRef} data-onboarding="preview">
-            {!submitted || !draft ? (
+          {/* 🎯 NOUVEAU : Résultat adaptatif selon l'intention */}
+          {submitted && detectedIntent ? (
+            <AdaptiveResult
+              intent={detectedIntent}
+              prompt={prompt}
+              draft={draft}
+              matchedTalents={matchedTalents}
+              onPublishWithoutAccount={handlePublishWithoutAccount}
+              onCreateAccount={handleCreateRecruiterAccount}
+              onApplyWithoutAccount={handleApplyWithoutAccount}
+              onCreateProfile={handleCreateTalentProfile}
+              onClarify={handleClarifyIntent}
+            />
+          ) : (
+            <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm" ref={previewRef} data-onboarding="preview">
+            {!submitted ? (
             <div className="h-[260px] md:h-[300px] grid place-items-center text-slate-500 text-center px-4">
               <div>
                 {isGenerating ? (
@@ -3264,7 +3369,21 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
                 )}
               </div>
             </div>
-          ) : (
+          ) : null}
+            </div>
+          )}
+
+          {/* Modal postulation sans compte */}
+          <QuickApplyModal
+            isOpen={quickApplyModal.isOpen}
+            onClose={quickApplyModal.closeModal}
+            missionTitle={quickApplyModal.selectedMission?.title}
+            missionCompany={quickApplyModal.selectedMission?.company}
+            onSubmit={handleSubmitApplication}
+          />
+
+          {/* ANCIEN CODE - Gardé pour l'édition du draft si besoin */}
+          {draft && detectedIntent === 'need_external' && (
             <div className="rounded-xl border border-slate-200 p-4 animate-in fade-in duration-300 relative">
               {/* Animation de succès */}
               {showSuccessAnimation && (
