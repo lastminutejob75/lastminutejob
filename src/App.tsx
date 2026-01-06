@@ -62,6 +62,8 @@ import { getPrimaryAndSecondaryJobs, extractContext, computeMissionReadiness, is
 import { detectIntent, type IntentType } from './lib/jobEngine';
 import { simpleGenerateAnnouncement, convertLLMResponseToDraft, type SimpleAnnouncementDraft } from './lib/simpleAnnounce';
 import { detectSimpleJob } from './lib/simpleJobs';
+import { orchestrator } from './lib/orchestrator';
+import type { MatchedTalent, OrchestratedResult } from './lib/orchestrator/types';
 import { parseLLMResponse } from './lib/llmAnnouncePrompt';
 import jobsDataRaw from './lib/uwi_human_jobs_freelance_varied_skills.json';
 import { enhancedSmartParse } from './lib/smartParser';
@@ -2547,72 +2549,77 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
   const [intentType, setIntentType] = useState<"personal_search" | "ambiguous" | null>(null);
   const [draft, setDraft] = useState<SimpleAnnouncementDraft | null>(null);
   const [llmAnnouncement, setLlmAnnouncement] = useState<any | null>(null);
+  const [matchedTalents, setMatchedTalents] = useState<MatchedTalent[]>([]);
+  const [orchestrationResult, setOrchestrationResult] = useState<OrchestratedResult | null>(null);
   const previewRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   
   async function generateAnnouncement() {
     if (!prompt.trim()) return;
-    
+
     setShowIntentBox(false);
     track("uwi_prompt_submitted", { length: prompt.length });
     setIsGenerating(true);
-    
+
     try {
-      // Essayer d'abord la route Next.js API, puis fallback sur Edge Function
-      let apiUrl = "/api/llm-announcement";
-      let res = await fetch(apiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt })
+      // 🎯 NOUVEAU : Utiliser l'orchestrateur unifié
+      console.log("[LMJLanding] 🎯 Orchestration du besoin...");
+      const result = await orchestrator.process(prompt);
+
+      // Stocker le résultat complet
+      setOrchestrationResult(result);
+
+      // Extraire le draft
+      setDraft(result.jobDraft);
+
+      // Extraire les talents matchés
+      setMatchedTalents(result.matches);
+
+      // Construire llmAnnouncement pour compatibilité avec l'UI existante
+      const cleanRoleLabel = (result.jobDraft.jobTitle &&
+                               result.jobDraft.jobTitle.trim() &&
+                               result.jobDraft.jobTitle !== "Rôle à préciser" &&
+                               result.jobDraft.jobTitle !== "Rôle à définir")
+        ? result.jobDraft.jobTitle
+        : "";
+
+      setLlmAnnouncement({
+        type: "need_someone",
+        role_label: cleanRoleLabel,
+        short_context: result.jobDraft.description,
+        location: result.jobDraft.location || null,
+        sections: [
+          { title: "Missions", items: result.jobDraft.missions },
+          { title: "Prérequis", items: result.jobDraft.requirements }
+        ]
       });
-      
-      // Si la route Next.js n'existe pas (404), utiliser l'Edge Function
-      if (!res.ok && res.status === 404) {
-        const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-        const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd5d2hxdGxlYnZ2YXV4em1kYXZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5MjE4NDUsImV4cCI6MjA3NzQ5Nzg0NX0.iQB1ZvpjX8hJ4VPclogbRYQnSd0LOFHGuYXrxGbI0Q8";
-        if (supabaseUrl) {
-          res = await fetch(`${supabaseUrl}/functions/v1/uwi-announce`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": `Bearer ${supabaseAnonKey}`
-            },
-            body: JSON.stringify({ prompt })
-          });
-        } else {
-          throw new Error("VITE_SUPABASE_URL not configured");
-        }
-      }
-      
-      const data = await res.json();
-      
-      if (!res.ok || !data.ok) {
-        console.error("[generateAnnouncement] Erreur API:", res.status, data);
-        throw new Error("llm error");
-      }
 
-      const llmResp = data.announcement;
-      setLlmAnnouncement(llmResp);
-
-      // Convertir la réponse LLM en draft pour l'affichage
-      const { convertLLMResponseToDraft } = await import("./lib/simpleAnnounce");
-      const draftFromLLM = convertLLMResponseToDraft(llmResp, prompt);
-      setDraft(draftFromLLM);
-      
       setSubmitted(true);
-      track("uwi_preview_generated");
+      track("uwi_preview_generated", {
+        matches: result.totalMatches,
+        confidence: result.confidence,
+        orchestrationTime: result.stats.totalTime
+      });
+
+      // Log pour debug
+      console.log(`[LMJLanding] ✅ Orchestration terminée :`, {
+        matches: result.totalMatches,
+        confidence: result.confidence,
+        estimatedTime: result.estimatedTime,
+        stats: result.stats
+      });
+
     } catch (e) {
-      console.error("[generateAnnouncement] ❌ Erreur LLM, utilisation du fallback simple:", e);
-      // En cas d'erreur LLM, utiliser le moteur simple comme fallback
+      console.error("[generateAnnouncement] ❌ Erreur orchestrateur:", e);
+      // En cas d'erreur, utiliser le fallback simple
       const { simpleGenerateAnnouncement } = await import("./lib/simpleAnnounce");
       const fallbackDraft = simpleGenerateAnnouncement(prompt);
       setDraft(fallbackDraft);
-      
-      // Fallback minimal pour llmAnnouncement aussi
-      // S'assurer que role_label n'est jamais "Rôle à préciser"
-      const cleanRoleLabel = (fallbackDraft.jobTitle && 
-                               fallbackDraft.jobTitle.trim() && 
-                               fallbackDraft.jobTitle !== "Rôle à préciser" && 
+
+      // Fallback minimal pour llmAnnouncement
+      const cleanRoleLabel = (fallbackDraft.jobTitle &&
+                               fallbackDraft.jobTitle.trim() &&
+                               fallbackDraft.jobTitle !== "Rôle à préciser" &&
                                fallbackDraft.jobTitle !== "Rôle à définir")
         ? fallbackDraft.jobTitle
         : "";
@@ -3369,7 +3376,111 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
             </div>
           )}
           </div>
-          
+
+          {/* Section des talents matchés */}
+          {matchedTalents.length > 0 && (
+            <div className="mt-4 rounded-xl border border-green-200 bg-green-50 p-4 space-y-3">
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-semibold text-green-900 flex items-center gap-2">
+                  <CheckCircle2 size={18} className="text-green-600" />
+                  {matchedTalents.length} talent{matchedTalents.length > 1 ? 's' : ''} trouvé{matchedTalents.length > 1 ? 's' : ''} !
+                </h3>
+                {orchestrationResult && (
+                  <span className="text-xs text-green-700 flex items-center gap-1">
+                    <Clock size={12} />
+                    {orchestrationResult.estimatedTime}
+                  </span>
+                )}
+              </div>
+
+              <div className="space-y-2">
+                {matchedTalents.slice(0, 3).map((talent, idx) => (
+                  <div key={talent.id} className="bg-white rounded-lg border border-green-200 p-3 space-y-2">
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <h4 className="text-sm font-semibold text-gray-900">
+                            {talent.first_name} {talent.last_name?.charAt(0)}.
+                          </h4>
+                          {talent.rating && talent.rating >= 4.5 && (
+                            <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full flex items-center gap-1">
+                              <Star size={12} fill="currentColor" />
+                              {talent.rating}
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-xs text-gray-600 mt-1 flex items-center gap-1">
+                          <MapPin size={12} />
+                          {talent.city}
+                          {talent.distance_km && ` (${talent.distance_km} km)`}
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className={`text-xs font-medium px-2 py-1 rounded-full ${
+                          talent.availability_status === 'available'
+                            ? 'bg-green-100 text-green-800'
+                            : talent.availability_status === 'maybe'
+                            ? 'bg-yellow-100 text-yellow-800'
+                            : 'bg-gray-100 text-gray-600'
+                        }`}>
+                          {talent.availability_status === 'available' ? '✓ Disponible' :
+                           talent.availability_status === 'maybe' ? '⏳ Bientôt dispo' :
+                           '✗ Indisponible'}
+                        </div>
+                      </div>
+                    </div>
+
+                    {talent.match_reasons && talent.match_reasons.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {talent.match_reasons.map((reason, i) => (
+                          <span key={i} className="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded border border-blue-200">
+                            {reason}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {talent.skills && talent.skills.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {talent.skills.slice(0, 4).map((skill, i) => (
+                          <span key={i} className="text-xs bg-gray-100 text-gray-700 px-2 py-0.5 rounded">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {talent.total_missions !== undefined && talent.total_missions > 0 && (
+                      <div className="text-xs text-gray-500">
+                        {talent.total_missions} mission{talent.total_missions > 1 ? 's' : ''} réalisée{talent.total_missions > 1 ? 's' : ''}
+                        {talent.completed_missions !== undefined && ` (${Math.round((talent.completed_missions / talent.total_missions) * 100)}% réussite)`}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {matchedTalents.length > 3 && (
+                <div className="text-center">
+                  <span className="text-xs text-green-700 font-medium">
+                    + {matchedTalents.length - 3} autre{matchedTalents.length - 3 > 1 ? 's' : ''} talent{matchedTalents.length - 3 > 1 ? 's' : ''}
+                  </span>
+                </div>
+              )}
+
+              {orchestrationResult && orchestrationResult.confidence && (
+                <div className="pt-2 border-t border-green-200">
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-green-700">Confiance du matching :</span>
+                    <span className="font-semibold text-green-900">
+                      {Math.round(orchestrationResult.confidence * 100)}%
+                    </span>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Formulaire d'édition du draft */}
           {draft && (
             <div className="mt-4 rounded-xl border bg-blue-50 p-4 space-y-3">
