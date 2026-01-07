@@ -62,6 +62,10 @@ import { getPrimaryAndSecondaryJobs, extractContext, computeMissionReadiness, is
 import { detectIntent, type IntentType } from './lib/jobEngine';
 import { simpleGenerateAnnouncement, convertLLMResponseToDraft, type SimpleAnnouncementDraft } from './lib/simpleAnnounce';
 import { detectSimpleJob } from './lib/simpleJobs';
+import { orchestrator } from './lib/orchestrator';
+import type { MatchedTalent, OrchestratedResult } from './lib/orchestrator/types';
+import { AdaptiveResult } from './components/AdaptiveResult';
+import { QuickApplyModal, useQuickApplyModal, type QuickApplyData } from './components/QuickApplyModal';
 import { parseLLMResponse } from './lib/llmAnnouncePrompt';
 import jobsDataRaw from './lib/uwi_human_jobs_freelance_varied_skills.json';
 import { enhancedSmartParse } from './lib/smartParser';
@@ -2547,72 +2551,104 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
   const [intentType, setIntentType] = useState<"personal_search" | "ambiguous" | null>(null);
   const [draft, setDraft] = useState<SimpleAnnouncementDraft | null>(null);
   const [llmAnnouncement, setLlmAnnouncement] = useState<any | null>(null);
+  const [matchedTalents, setMatchedTalents] = useState<MatchedTalent[]>([]);
+  const [orchestrationResult, setOrchestrationResult] = useState<OrchestratedResult | null>(null);
+  const [detectedIntent, setDetectedIntent] = useState<IntentType | null>(null);
   const previewRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Modal pour postuler sans compte
+  const quickApplyModal = useQuickApplyModal();
   
-  async function generateAnnouncement() {
+  async function generateAnnouncement(forcedIntent?: IntentType) {
     if (!prompt.trim()) return;
-    
+
     setShowIntentBox(false);
     track("uwi_prompt_submitted", { length: prompt.length });
     setIsGenerating(true);
-    
+
     try {
-      // Essayer d'abord la route Next.js API, puis fallback sur Edge Function
-      let apiUrl = "/api/llm-announcement";
-      let res = await fetch(apiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt })
-      });
-      
-      // Si la route Next.js n'existe pas (404), utiliser l'Edge Function
-      if (!res.ok && res.status === 404) {
-        const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-        const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd5d2hxdGxlYnZ2YXV4em1kYXZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5MjE4NDUsImV4cCI6MjA3NzQ5Nzg0NX0.iQB1ZvpjX8hJ4VPclogbRYQnSd0LOFHGuYXrxGbI0Q8";
-        if (supabaseUrl) {
-          res = await fetch(`${supabaseUrl}/functions/v1/uwi-announce`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": `Bearer ${supabaseAnonKey}`
-            },
-            body: JSON.stringify({ prompt })
-          });
-        } else {
-          throw new Error("VITE_SUPABASE_URL not configured");
-        }
-      }
-      
-      const data = await res.json();
-      
-      if (!res.ok || !data.ok) {
-        console.error("[generateAnnouncement] Erreur API:", res.status, data);
-        throw new Error("llm error");
+      // 🎯 ÉTAPE 1 : Détecter l'intention (ou utiliser celle forcée)
+      const intent = forcedIntent || detectIntent(prompt);
+      setDetectedIntent(intent);
+      console.log("[LMJLanding] 🧠 Intention détectée :", intent);
+
+      // 🎯 ÉTAPE 2 : Traiter selon l'intention
+      if (intent === 'need_external') {
+        // RECRUTEUR : Utiliser l'orchestrateur
+        console.log("[LMJLanding] 👔 Mode recruteur - Orchestration...");
+        const result = await orchestrator.process(prompt);
+
+        // Stocker les résultats
+        setOrchestrationResult(result);
+        setDraft(result.jobDraft);
+        setMatchedTalents(result.matches);
+
+        // Compatibilité UI existante
+        const cleanRoleLabel = (result.jobDraft.jobTitle &&
+                                 result.jobDraft.jobTitle.trim() &&
+                                 result.jobDraft.jobTitle !== "Rôle à préciser" &&
+                                 result.jobDraft.jobTitle !== "Rôle à définir")
+          ? result.jobDraft.jobTitle
+          : "";
+
+        setLlmAnnouncement({
+          type: "need_someone",
+          role_label: cleanRoleLabel,
+          short_context: result.jobDraft.description,
+          location: result.jobDraft.location || null,
+          sections: [
+            { title: "Missions", items: result.jobDraft.missions },
+            { title: "Prérequis", items: result.jobDraft.requirements }
+          ]
+        });
+
+        track("uwi_preview_generated_recruiter", {
+          matches: result.totalMatches,
+          confidence: result.confidence,
+          orchestrationTime: result.stats.totalTime
+        });
+
+        console.log(`[LMJLanding] ✅ Orchestration terminée :`, {
+          matches: result.totalMatches,
+          confidence: result.confidence
+        });
+
+      } else if (intent === 'personal_search') {
+        // CANDIDAT : Pas besoin d'orchestrateur, juste afficher les missions
+        console.log("[LMJLanding] 👤 Mode candidat - Recherche de missions...");
+
+        // Stocker l'intent pour afficher l'AdaptiveResult
+        setDraft(null); // Pas de draft pour candidat
+        setMatchedTalents([]); // On affichera les missions dans TalentResult
+
+        track("uwi_preview_generated_talent", {
+          prompt: prompt.substring(0, 50)
+        });
+
+      } else {
+        // AMBIGUË : L'AdaptiveResult affichera la clarification
+        console.log("[LMJLanding] 🤔 Intention ambiguë - Demande de clarification");
+        setDraft(null);
+        setMatchedTalents([]);
+
+        track("uwi_preview_ambiguous");
       }
 
-      const llmResp = data.announcement;
-      setLlmAnnouncement(llmResp);
-
-      // Convertir la réponse LLM en draft pour l'affichage
-      const { convertLLMResponseToDraft } = await import("./lib/simpleAnnounce");
-      const draftFromLLM = convertLLMResponseToDraft(llmResp, prompt);
-      setDraft(draftFromLLM);
-      
       setSubmitted(true);
-      track("uwi_preview_generated");
+
     } catch (e) {
-      console.error("[generateAnnouncement] ❌ Erreur LLM, utilisation du fallback simple:", e);
-      // En cas d'erreur LLM, utiliser le moteur simple comme fallback
+      console.error("[generateAnnouncement] ❌ Erreur:", e);
+
+      // Fallback : considérer comme recruteur par défaut
       const { simpleGenerateAnnouncement } = await import("./lib/simpleAnnounce");
       const fallbackDraft = simpleGenerateAnnouncement(prompt);
       setDraft(fallbackDraft);
-      
-      // Fallback minimal pour llmAnnouncement aussi
-      // S'assurer que role_label n'est jamais "Rôle à préciser"
-      const cleanRoleLabel = (fallbackDraft.jobTitle && 
-                               fallbackDraft.jobTitle.trim() && 
-                               fallbackDraft.jobTitle !== "Rôle à préciser" && 
+      setDetectedIntent('need_external');
+
+      const cleanRoleLabel = (fallbackDraft.jobTitle &&
+                               fallbackDraft.jobTitle.trim() &&
+                               fallbackDraft.jobTitle !== "Rôle à préciser" &&
                                fallbackDraft.jobTitle !== "Rôle à définir")
         ? fallbackDraft.jobTitle
         : "";
@@ -2631,14 +2667,71 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
       setIsGenerating(false);
     }
   }
-  
+
+  // 🎯 Handlers pour les CTAs adaptatifs
+
+  // Clarifier l'intention
+  function handleClarifyIntent(clarifiedIntent: 'need_external' | 'personal_search') {
+    console.log("[LMJLanding] ✅ Intention clarifiée :", clarifiedIntent);
+    setDetectedIntent(clarifiedIntent);
+
+    // Relancer la génération avec l'intention FORCÉE
+    generateAnnouncement(clarifiedIntent);
+  }
+
+  // Publier une annonce SANS compte
+  async function handlePublishWithoutAccount() {
+    console.log("[LMJLanding] 📤 Publication sans compte");
+    // TODO: Implémenter la logique de publication
+    // Pour l'instant, juste afficher un message de succès
+    alert("Annonce publiée ! Nous vous recontacterons par email si des talents correspondent.");
+    track("publish_without_account", {
+      hasMatches: matchedTalents.length > 0
+    });
+  }
+
+  // Créer un compte recruteur
+  function handleCreateRecruiterAccount() {
+    console.log("[LMJLanding] 👔 Création compte recruteur");
+    // Rediriger vers la page de création d'annonce
+    window.location.hash = "#/post-job";
+    track("create_recruiter_account_clicked");
+  }
+
+  // Postuler à une mission SANS compte
+  async function handleApplyWithoutAccount(missionId: string) {
+    console.log("[LMJLanding] 📬 Ouverture modal postulation:", missionId);
+    quickApplyModal.openModal(missionId, "Mission", "Employeur");
+    track("apply_without_account_started", { missionId });
+  }
+
+  // Soumettre la candidature
+  async function handleSubmitApplication(data: QuickApplyData) {
+    console.log("[LMJLanding] 📮 Soumission candidature:", data);
+    // TODO: Envoyer la candidature à l'API
+    // Simulation d'envoi
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    track("application_submitted", {
+      hasMessage: !!data.message
+    });
+  }
+
+  // Créer un profil talent
+  function handleCreateTalentProfile() {
+    console.log("[LMJLanding] 👤 Création profil talent");
+    // Rediriger vers la page candidat existante
+    window.location.hash = "#/candidate";
+    track("create_talent_profile_clicked");
+  }
+
   // Handler pour le submit du formulaire
   function handleSubmit(e?: React.FormEvent) {
     if (e) {
       e.preventDefault();
     }
     if (!prompt.trim()) return;
-    
+
     // 🔥 v1 WOW : on envoie TOUT au LLM
     generateAnnouncement();
   }
@@ -2674,26 +2767,20 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
   useEffect(() => {
     if (debouncedPrompt.trim() && !submitted) {
       const intent = detectIntent(debouncedPrompt);
-      
+
       // NE PAS GÉNÉRER si recherche personnelle
       if (intent === "personal_search") {
         return;
       }
-      
+
       // NE PAS GÉNÉRER automatiquement si ambigu
       if (intent === "ambiguous") {
         return;
       }
-      
+
       // GÉNÉRER seulement si besoin externe
-      setIsGenerating(true);
-      setTimeout(() => {
-        setSubmitted(true);
-        setIsGenerating(false);
-        setShowSuccessAnimation(true);
-        setTimeout(() => setShowSuccessAnimation(false), 2000);
-        track("uwi_realtime_preview_generated");
-      }, 300);
+      console.log("[LMJLanding] 🎯 Génération automatique après debounce");
+      generateAnnouncement();
     }
   }, [debouncedPrompt, submitted]);
   
@@ -3230,34 +3317,60 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
           </div>
         </div>
         <div>
-          <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm" ref={previewRef} data-onboarding="preview">
-            {!submitted || !draft ? (
-            <div className="h-[260px] md:h-[300px] grid place-items-center text-slate-500 text-center px-4">
-              <div>
-                {isGenerating ? (
-                  <>
-                    <svg className="animate-spin h-8 w-8 mx-auto mb-2 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    <p className="text-sm font-medium">Génération en cours...</p>
-                    <p className="text-xs mt-1 text-slate-400"><UWiLogo size="sm" /> analyse votre demande</p>
-                  </>
-                ) : (
-                  <>
-                    <Sparkles className="mx-auto mb-2 text-slate-300" size={32} />
-                    <p className="text-sm">Tapez votre besoin ci-contre</p>
-                    <p className="text-xs mt-1"><UWiLogo size="sm" /> générera un aperçu automatiquement</p>
-                    {prompt.trim() && !submitted && debouncedPrompt !== prompt && (
-                      <div className="mt-3 px-3 py-1.5 text-xs rounded-lg bg-blue-50 text-blue-700 border border-blue-200">
-                        ⏳ Génération en cours...
-                      </div>
-                    )}
-                  </>
-                )}
+          {/* 🎯 NOUVEAU : Résultat adaptatif selon l'intention */}
+          {submitted && detectedIntent ? (
+            <AdaptiveResult
+              intent={detectedIntent}
+              prompt={prompt}
+              draft={draft}
+              matchedTalents={matchedTalents}
+              onPublishWithoutAccount={handlePublishWithoutAccount}
+              onCreateAccount={handleCreateRecruiterAccount}
+              onApplyWithoutAccount={handleApplyWithoutAccount}
+              onCreateProfile={handleCreateTalentProfile}
+              onClarify={handleClarifyIntent}
+            />
+          ) : !submitted ? (
+            <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm" ref={previewRef} data-onboarding="preview">
+              <div className="h-[260px] md:h-[300px] grid place-items-center text-slate-500 text-center px-4">
+                <div>
+                  {isGenerating ? (
+                    <>
+                      <svg className="animate-spin h-8 w-8 mx-auto mb-2 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      <p className="text-sm font-medium">Génération en cours...</p>
+                      <p className="text-xs mt-1 text-slate-400"><UWiLogo size="sm" /> analyse votre demande</p>
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles className="mx-auto mb-2 text-slate-300" size={32} />
+                      <p className="text-sm">Tapez votre besoin ci-contre</p>
+                      <p className="text-xs mt-1"><UWiLogo size="sm" /> générera un aperçu automatiquement</p>
+                      {prompt.trim() && !submitted && debouncedPrompt !== prompt && (
+                        <div className="mt-3 px-3 py-1.5 text-xs rounded-lg bg-blue-50 text-blue-700 border border-blue-200">
+                          ⏳ Génération en cours...
+                        </div>
+                      )}
+                    </>
+                  )}
+                </div>
               </div>
             </div>
-          ) : (
+          ) : null}
+
+          {/* Modal postulation sans compte */}
+          <QuickApplyModal
+            isOpen={quickApplyModal.isOpen}
+            onClose={quickApplyModal.closeModal}
+            missionTitle={quickApplyModal.selectedMission?.title}
+            missionCompany={quickApplyModal.selectedMission?.company}
+            onSubmit={handleSubmitApplication}
+          />
+
+          {/* ANCIEN CODE - DÉSACTIVÉ car remplacé par AdaptiveResult */}
+          {false && draft && detectedIntent === 'need_external' && (
             <div className="rounded-xl border border-slate-200 p-4 animate-in fade-in duration-300 relative">
               {/* Animation de succès */}
               {showSuccessAnimation && (
@@ -3383,8 +3496,111 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
               )}
             </div>
           )}
-          </div>
-          
+
+          {/* Section des talents matchés */}
+          {matchedTalents.length > 0 && (
+            <div className="mt-4 rounded-xl border border-green-200 bg-green-50 p-4 space-y-3">
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-semibold text-green-900 flex items-center gap-2">
+                  <CheckCircle2 size={18} className="text-green-600" />
+                  {matchedTalents.length} talent{matchedTalents.length > 1 ? 's' : ''} trouvé{matchedTalents.length > 1 ? 's' : ''} !
+                </h3>
+                {orchestrationResult && (
+                  <span className="text-xs text-green-700 flex items-center gap-1">
+                    <Clock size={12} />
+                    {orchestrationResult.estimatedTime}
+                  </span>
+                )}
+              </div>
+
+              <div className="space-y-2">
+                {matchedTalents.slice(0, 3).map((talent, idx) => (
+                  <div key={talent.id} className="bg-white rounded-lg border border-green-200 p-3 space-y-2">
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <h4 className="text-sm font-semibold text-gray-900">
+                            {talent.first_name} {talent.last_name?.charAt(0)}.
+                          </h4>
+                          {talent.rating && talent.rating >= 4.5 && (
+                            <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full flex items-center gap-1">
+                              <Star size={12} fill="currentColor" />
+                              {talent.rating}
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-xs text-gray-600 mt-1 flex items-center gap-1">
+                          <MapPin size={12} />
+                          {talent.city}
+                          {talent.distance_km && ` (${talent.distance_km} km)`}
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className={`text-xs font-medium px-2 py-1 rounded-full ${
+                          talent.availability_status === 'available'
+                            ? 'bg-green-100 text-green-800'
+                            : talent.availability_status === 'maybe'
+                            ? 'bg-yellow-100 text-yellow-800'
+                            : 'bg-gray-100 text-gray-600'
+                        }`}>
+                          {talent.availability_status === 'available' ? '✓ Disponible' :
+                           talent.availability_status === 'maybe' ? '⏳ Bientôt dispo' :
+                           '✗ Indisponible'}
+                        </div>
+                      </div>
+                    </div>
+
+                    {talent.match_reasons && talent.match_reasons.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {talent.match_reasons.map((reason, i) => (
+                          <span key={i} className="text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded border border-blue-200">
+                            {reason}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {talent.skills && talent.skills.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {talent.skills.slice(0, 4).map((skill, i) => (
+                          <span key={i} className="text-xs bg-gray-100 text-gray-700 px-2 py-0.5 rounded">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {talent.total_missions !== undefined && talent.total_missions > 0 && (
+                      <div className="text-xs text-gray-500">
+                        {talent.total_missions} mission{talent.total_missions > 1 ? 's' : ''} réalisée{talent.total_missions > 1 ? 's' : ''}
+                        {talent.completed_missions !== undefined && ` (${Math.round((talent.completed_missions / talent.total_missions) * 100)}% réussite)`}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {matchedTalents.length > 3 && (
+                <div className="text-center">
+                  <span className="text-xs text-green-700 font-medium">
+                    + {matchedTalents.length - 3} autre{matchedTalents.length - 3 > 1 ? 's' : ''} talent{matchedTalents.length - 3 > 1 ? 's' : ''}
+                  </span>
+                </div>
+              )}
+
+              {orchestrationResult && orchestrationResult.confidence && (
+                <div className="pt-2 border-t border-green-200">
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-green-700">Confiance du matching :</span>
+                    <span className="font-semibold text-green-900">
+                      {Math.round(orchestrationResult.confidence * 100)}%
+                    </span>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Formulaire d'édition du draft */}
           {draft && (
             <div className="mt-4 rounded-xl border bg-blue-50 p-4 space-y-3">
@@ -3489,7 +3705,7 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
               </label>
             </div>
           )}
-          
+
           {/* Module "Informations à compléter" - version simplifiée et intégrée */}
           {submitted && draft && parsedData && (
             <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl border-2 border-amber-300 shadow-lg p-5 sm:p-6 animate-in fade-in slide-in-from-bottom-4 duration-500 mt-6">
@@ -3735,11 +3951,11 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
                     </>
                   )}
                 </button>
-                <button 
+                <button
                   onClick={() => {
                     setSubmitted(false);
                     setPrompt("");
-                  }} 
+                  }}
                   className="px-3 py-2 rounded-lg border border-slate-300 bg-white font-semibold hover:bg-slate-50 text-sm transition-all"
                 >
                   Modifier
