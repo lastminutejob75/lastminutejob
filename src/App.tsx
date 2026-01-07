@@ -2693,8 +2693,8 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
   // Créer un compte recruteur
   function handleCreateRecruiterAccount() {
     console.log("[LMJLanding] 👔 Création compte recruteur");
-    // TODO: Rediriger vers formulaire d'inscription recruteur
-    window.location.hash = "#/signup?type=recruiter";
+    // Rediriger vers la page de création d'annonce
+    window.location.hash = "#/post-job";
     track("create_recruiter_account_clicked");
   }
 
@@ -2720,8 +2720,8 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
   // Créer un profil talent
   function handleCreateTalentProfile() {
     console.log("[LMJLanding] 👤 Création profil talent");
-    // TODO: Rediriger vers formulaire d'inscription talent
-    window.location.hash = "#/signup?type=talent";
+    // Rediriger vers la page candidat existante
+    window.location.hash = "#/candidate";
     track("create_talent_profile_clicked");
   }
 
