@@ -17,7 +17,6 @@ import {
   Zap,
   CheckCircle2,
   ArrowRight,
-  UserPlus,
   Send,
   Building2
 } from 'lucide-react';
@@ -35,7 +34,6 @@ interface AdaptiveResultProps {
   draft?: SimpleAnnouncementDraft | null;
   matchedTalents?: MatchedTalent[];
   onPublishWithoutAccount?: () => void;
-  onCreateAccount?: () => void;
   onApplyWithoutAccount?: (missionId: string) => void;
   onCreateProfile?: () => void;
   onClarify?: (clarifiedIntent: 'need_external' | 'personal_search') => void;
@@ -51,7 +49,6 @@ export function AdaptiveResult({
   draft,
   matchedTalents = [],
   onPublishWithoutAccount,
-  onCreateAccount,
   onApplyWithoutAccount,
   onCreateProfile,
   onClarify
@@ -74,7 +71,6 @@ export function AdaptiveResult({
         draft={draft}
         matchedTalents={matchedTalents}
         onPublishWithoutAccount={onPublishWithoutAccount}
-        onCreateAccount={onCreateAccount}
       />
     );
   }
@@ -170,13 +166,11 @@ function ClarificationBox({
 function RecruiterResult({
   draft,
   matchedTalents,
-  onPublishWithoutAccount,
-  onCreateAccount
+  onPublishWithoutAccount
 }: {
   draft?: SimpleAnnouncementDraft | null;
   matchedTalents?: MatchedTalent[];
   onPublishWithoutAccount?: () => void;
-  onCreateAccount?: () => void;
 }) {
   if (!draft) return null;
 
@@ -288,7 +282,7 @@ function RecruiterResult({
         </div>
       )}
 
-      {/* CTAs */}
+      {/* CTA unique et clair */}
       <div className="space-y-4">
         <button
           onClick={onPublishWithoutAccount}
@@ -303,26 +297,9 @@ function RecruiterResult({
           </span>
         </button>
 
-        <div className="relative">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t-2 border-slate-200"></div>
-          </div>
-          <div className="relative flex justify-center text-sm">
-            <span className="px-3 py-1 bg-white text-slate-500 font-semibold rounded-full">OU</span>
-          </div>
-        </div>
-
-        <button
-          onClick={onCreateAccount}
-          className="group w-full px-6 py-4 border-2 border-blue-300 bg-white hover:bg-blue-50 text-blue-700 rounded-xl font-bold text-base transition-all duration-300 flex items-center justify-center gap-3 hover:border-blue-400 hover:shadow-md transform hover:scale-[1.01]"
-        >
-          <UserPlus size={20} className="group-hover:scale-110 transition-transform" />
-          Créer un compte recruteur
-        </button>
-
         <div className="text-center p-4 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100">
           <p className="text-sm text-slate-700 leading-relaxed">
-            <span className="font-bold text-blue-700">💡 Avec un compte :</span> notifications automatiques, historique des annonces, matching prioritaire
+            <span className="font-bold text-blue-700">📧</span> Entrez simplement votre email pour recevoir les candidatures
           </p>
         </div>
       </div>
