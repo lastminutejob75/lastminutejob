@@ -2772,26 +2772,20 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
   useEffect(() => {
     if (debouncedPrompt.trim() && !submitted) {
       const intent = detectIntent(debouncedPrompt);
-      
+
       // NE PAS GÉNÉRER si recherche personnelle
       if (intent === "personal_search") {
         return;
       }
-      
+
       // NE PAS GÉNÉRER automatiquement si ambigu
       if (intent === "ambiguous") {
         return;
       }
-      
+
       // GÉNÉRER seulement si besoin externe
-      setIsGenerating(true);
-      setTimeout(() => {
-        setSubmitted(true);
-        setIsGenerating(false);
-        setShowSuccessAnimation(true);
-        setTimeout(() => setShowSuccessAnimation(false), 2000);
-        track("uwi_realtime_preview_generated");
-      }, 300);
+      console.log("[LMJLanding] 🎯 Génération automatique après debounce");
+      generateAnnouncement();
     }
   }, [debouncedPrompt, submitted]);
   
@@ -3365,8 +3359,8 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
             onSubmit={handleSubmitApplication}
           />
 
-          {/* ANCIEN CODE - Gardé pour l'édition du draft si besoin */}
-          {draft && detectedIntent === 'need_external' && (
+          {/* ANCIEN CODE - DÉSACTIVÉ car remplacé par AdaptiveResult */}
+          {false && draft && detectedIntent === 'need_external' && (
             <div className="rounded-xl border border-slate-200 p-4 animate-in fade-in duration-300 relative">
               {/* Animation de succès */}
               {showSuccessAnimation && (
