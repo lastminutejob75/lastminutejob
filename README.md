@@ -1,151 +1,46 @@
-# LastMinuteJob - Plateforme de Recrutement Rapide
+# LastMinuteJob (LMJ)
 
-**Plateforme de recrutement rapide pour emplois temporaires et missions courtes**
+**Plateforme de recrutement spécialisée dans les missions urgentes et opérationnelles.**
 
-LastMinuteJob est une application web moderne permettant aux recruteurs de publier rapidement des annonces d'emploi et aux candidats de postuler facilement. Le projet intègre un système intelligent de détection de métiers et une interface d'administration complète.
+LastMinuteJob connecte en temps réel des entreprises ayant un besoin immédiat (restauration, logistique, événementiel, retail, hôtellerie) avec des talents disponibles autour d'eux, grâce un matching rapide, fiable et automatisé.
 
-## 🚀 Fonctionnalités principales
+## 🤖 Agent RH IA Intégré
 
-### Pour les recruteurs
-- **Publication rapide d'annonces** : Création d'annonces en quelques clics avec détection automatique du métier
-- **Gestion des candidatures** : Suivi des candidatures, pré-screening, export CSV
-- **Dashboard administrateur** : Interface complète pour gérer les annonces, candidats et recruteurs
-- **Détection intelligente** : Système de détection automatique des métiers (restaurant, logistique, tech, créatif, etc.)
-- **Génération d'annonces IA** : Génération automatique d'annonces optimisées avec variantes
+LMJ embarque un **Agent RH d’intelligence artificielle** qui agit comme un recruteur digital autonome.
 
-### Pour les candidats
-- **Recherche d'emplois** : Navigation intuitive avec filtres par métier, localisation, type de contrat
-- **Candidature simplifiée** : Formulaire de candidature avec upload de CV
-- **Pré-screening** : Réponses aux questions de pré-sélection
+L’agent est capable de :
+
+1.  **Comprendre un besoin** exprimé en langage naturel (*« Trouve-moi 2 serveurs disponibles ce soir à Lyon »*)
+2.  **Analyser les contraintes** (horaires, localisation, compétences, disponibilité réelle, fiabilité)
+3.  **Identifier et prioriser** les meilleurs profils (scoring automatique, compatibilité instantanée)
+4.  **Orchestrer les actions** (envoi d’alertes, génération de shortlist, suivi des confirmations, relances)
+
+## 🎯 Objectif Produit
+
+Réduire au minimum le délai entre :
+> “J’ai besoin de quelqu’un” ➡️ “La personne est confirmée et commence la mission.”
+
+LMJ agit comme **copilote RH + marketplace temps réel**.
 
 ## 🛠️ Technologies
 
-- **Frontend** : React + TypeScript + Vite
-- **Styling** : Tailwind CSS
-- **Backend** : Supabase (PostgreSQL + Edge Functions)
-- **Déploiement** : Vercel
-- **IA** : OpenAI API pour la génération d'annonces
+-   **Frontend** : React + TypeScript + Vite
+-   **Styling** : Tailwind CSS
+-   **Backend** : Supabase (PostgreSQL + Edge Functions)
+-   **Deployment** : Vercel
+-   **AI** : OpenAI API (pour l'Agent RH)
 
-## 📋 Prérequis
+## 🚀 Installation & Démarrage
 
-- Node.js 18+ 
-- npm ou yarn
-- Compte Supabase
-- Clé API OpenAI (optionnel, pour la génération d'annonces)
+1.  **Installation des dépendances**
+    ```bash
+    npm install
+    ```
 
-## 🔧 Installation
+2.  **Configuration**
+    Copiez `.env.local.example` vers `.env.local` et configurez vos clés Supabase et OpenAI.
 
-1. **Cloner le dépôt**
-```bash
-git clone <url-du-repo>
-cd lastminutejob-restored
-```
-
-2. **Installer les dépendances**
-```bash
-npm install
-```
-
-3. **Configurer les variables d'environnement**
-```bash
-cp .env.local.example .env.local
-```
-
-Éditez `.env.local` et ajoutez :
-```env
-VITE_SUPABASE_URL=votre_url_supabase
-VITE_SUPABASE_ANON_KEY=votre_cle_anon
-OPENAI_API_KEY=votre_cle_openai (optionnel)
-```
-
-4. **Configurer Supabase**
-   - Créez un projet Supabase
-   - Exécutez les migrations SQL dans `supabase/migrations/` dans l'ordre chronologique
-   - Configurez les Edge Functions si nécessaire
-
-5. **Lancer le serveur de développement**
-```bash
-npm run dev
-```
-
-## 📁 Structure du projet
-
-```
-lastminutejob-restored/
-├── src/
-│   ├── components/      # Composants React réutilisables
-│   │   ├── AdminDashboard.tsx
-│   │   ├── PostJobWizard.tsx
-│   │   ├── CandidatesPage.tsx
-│   │   └── ...
-│   ├── pages/          # Pages de l'application
-│   │   ├── Home.tsx
-│   │   ├── PostJobPage.tsx
-│   │   └── ...
-│   ├── lib/            # Logique métier
-│   │   ├── jobEngine.ts        # Moteur de détection de métiers
-│   │   ├── jobDetection.ts     # Détection automatique
-│   │   ├── jobService.ts        # Services API
-│   │   └── ...
-│   └── hooks/          # Hooks React personnalisés
-├── supabase/
-│   ├── functions/      # Edge Functions Supabase
-│   └── migrations/     # Migrations SQL
-├── public/             # Assets statiques
-└── scripts/            # Scripts utilitaires
-```
-
-## 🗄️ Base de données
-
-Le projet utilise Supabase (PostgreSQL) avec les tables principales :
-- `jobs` : Annonces d'emploi
-- `applications` : Candidatures
-- `candidates` : Candidats
-- `clients` : Recruteurs/clients
-- `job_detection_logs` : Logs de détection
-- `admin_users` : Utilisateurs administrateurs
-
-Consultez `supabase/migrations/` pour le schéma complet.
-
-## 🚀 Déploiement
-
-### Vercel
-
-1. Connectez votre dépôt GitHub à Vercel
-2. Configurez les variables d'environnement dans Vercel
-3. Le déploiement se fait automatiquement à chaque push
-
-### Configuration Vercel
-
-Assurez-vous d'avoir configuré :
-- `VITE_SUPABASE_URL`
-- `VITE_SUPABASE_ANON_KEY`
-- `SUPABASE_SERVICE_ROLE_KEY` (pour les Edge Functions)
-- `OPENAI_API_KEY` (optionnel)
-
-## 📝 Scripts disponibles
-
-```bash
-npm run dev          # Serveur de développement
-npm run build        # Build de production
-npm run preview      # Prévisualiser le build
-npm run lint         # Linter le code
-```
-
-## 🔐 Sécurité
-
-- Les clés API ne doivent jamais être commitées
-- Utilisez les variables d'environnement pour les secrets
-- Les Edge Functions Supabase gèrent l'authentification côté serveur
-
-## 📄 Licence
-
-Ce projet est privé et propriétaire.
-
-## 🤝 Support
-
-Pour toute question ou problème, consultez la documentation dans le dossier `docs/` ou ouvrez une issue.
-
----
-
-**LastMinuteJob** - Recrutement rapide et efficace 🚀
+3.  **Lancement**
+    ```bash
+    npm run dev
+    ```

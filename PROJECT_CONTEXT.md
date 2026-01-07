@@ -1,65 +1,27 @@
-# 🎯 Contexte du Projet
+# 🎯 Contexte du Projet : LastMinuteJob (LMJ)
 
-## Projet Actif
+## Vision
+LastMinuteJob est une plateforme de recrutement ultra-rapide pilotée par un **Agent RH IA**. L'objectif est d'automatiser le processus de recrutement pour des missions urgentes (intérim, extra, freelance court) dans des secteurs tendus comme la restauration, l'événementiel ou la logistique.
 
-**UWi MVP – Prompt Orchestrator**
+## 🧠 L'Agent RH IA (Cœur du système)
+L'intelligence artificielle n'est pas une simple fonctionnalité, c'est le moteur de l'application. Elle doit :
+-   **Interpréter** les demandes en langage naturel.
+-   **Scanner** la base de candidats en temps réel.
+-   **Contacter** proactivement les candidats (SMS/Notif).
+-   **Valider** les disponibilités et les compétences.
 
-## Objectif
+## 🔄 Flux Simplifié
+1.  **Recruteur** : "J'ai besoin de 3 barmen pour samedi soir à Bastille."
+2.  **Agent IA** : Analyse, filtre, score les candidats, et envoie les propositions.
+3.  **Candidat** : Reçoit l'offre, accepte/refuse.
+4.  **Match** : Confirmation instantanée.
 
-Construire une interface orchestrée par prompt capable d'analyser une demande utilisateur et de proposer des solutions exécutables par :
+## Stack Technique Actuelle
+-   **Frontend** : React, Vite, Tailwind.
+-   **Backend** : Supabase (Auth, DB, Realtime, Edge Functions).
+-   **IA** : Intégration LLM pour le parsing et le matching.
 
-- 👤 **Humains**
-- 🤖 **Agents IA** (`ai_agent`)
-- 🛞 **Robots**
-- 🧩 **SaaS**
-
-## Flux Principal
-
-1. **Input utilisateur** → Prompt libre
-2. **Parsing** → `ParsedBrief` (compréhension structurée)
-3. **Matching** → Services recommandés avec scores
-4. **Orchestration** → `OrchestrationSuggestion` (plan d'action)
-
-## Principes de Développement
-
-✅ **TypeScript strict** - Toutes les options strictes activées
-✅ **Next.js App Router** - Structure `/app` uniquement
-✅ **Code simple, lisible, modulaire** - Séparation claire des responsabilités
-✅ **Styling minimal** - Stubs HTML basiques, pas de CSS complexe
-✅ **Supabase préparé** - Structure prête mais non intégrée pour l'instant
-
-## Structure
-
-```
-/app              # Next.js App Router
-  /brief          # Page: input prompt → JSON résultat
-  /services       # Page: liste + formulaire ajout
-  /api
-    /orchestrate  # POST: prompt → ParsedBrief → OrchestrationSuggestion
-
-/lib              # Logique métier modulaire
-  llm.ts         # Client LLM (OpenAI)
-  orchestrator.ts # Orchestration complète
-  supabase.ts    # Préparation Supabase (stubs)
-
-/types            # Types TypeScript stricts
-  brief.ts       # ParsedBrief, ServiceMatch, OrchestrationSuggestion
-
-/data             # Données statiques
-  services.ts     # Base de services (ExecutionMode)
-```
-
-## Types Clés
-
-- `ExecutionMode`: `"human" | "ai_agent" | "robot" | "saas"`
-- `ParsedBrief`: Brief structuré après parsing
-- `ServiceMatch`: Service recommandé avec score
-- `OrchestrationSuggestion`: Plan d'action complet
-
-## Notes Importantes
-
-- **Ancien projet archivé** dans `archive_lmj_uwi_legacy/`
-- **Pas d'intégration Supabase** pour l'instant (structure préparée)
-- **Styling minimal** - focus sur la fonctionnalité
-- **TypeScript strict** - pas de `any` sauf cas nécessaires avec vérifications
-
+## État d'avancement
+-   Codebase existante restaurée.
+-   Intégration Git/GitHub fonctionnelle.
+-   Prochaine étape prioritaire : Implémentation et affinage de l'Agent RH.
