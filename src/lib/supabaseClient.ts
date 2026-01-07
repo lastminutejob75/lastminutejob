@@ -3,8 +3,10 @@
 import { createClient } from "@supabase/supabase-js";
 
 // For Vite projects, use import.meta.env instead of process.env
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || "https://gywhqtlebvvauxzmdavb.supabase.co";
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd5d2hxdGxlYnZ2YXV4em1kYXZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5MjE4NDUsImV4cCI6MjA3NzQ5Nzg0NX0.iQB1ZvpjX8hJ4VPclogbRYQnSd0LOFHGuYXrxGbI0Q8";
+// ⚠️ IMPORTANT : LastMinuteJob utilise son propre Supabase, séparé d'UWi
+// Supabase LastMinuteJob : https://lsukxdglogtgfukdqqti.supabase.co
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || "https://lsukxdglogtgfukdqqti.supabase.co";
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || "sb_publishable_8lYvOVlfCNTdJaYB0SYfnw_5PapFvCO";
 
 if (!supabaseUrl || !supabaseAnonKey) {
   console.error('Missing Supabase environment variables:', {

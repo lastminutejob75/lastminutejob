@@ -11,7 +11,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.57.4",
+    "@supabase/supabase-js": "^2.89.0",
     "lucide-react": "^0.344.0",
     "openai": "^6.9.1",
     "react": "^18.3.1",
