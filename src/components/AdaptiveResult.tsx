@@ -105,46 +105,58 @@ function ClarificationBox({
   onClarify?: (intent: 'need_external' | 'personal_search') => void;
 }) {
   return (
-    <div className="mt-6 rounded-xl border-2 border-orange-200 bg-orange-50 p-6 animate-in fade-in slide-in-from-top-2 duration-300">
-      <div className="flex items-start gap-3 mb-4">
-        <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
-          <Zap size={20} className="text-orange-600" />
+    <div className="mt-6 rounded-2xl border-2 border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50 p-6 sm:p-8 animate-in fade-in slide-in-from-top-2 duration-500 shadow-sm">
+      <div className="flex items-start gap-4 mb-6">
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-400 to-orange-500 flex items-center justify-center flex-shrink-0 shadow-md">
+          <Zap size={24} className="text-white" />
         </div>
-        <div>
-          <h3 className="font-semibold text-orange-900 mb-1">
+        <div className="flex-1">
+          <h3 className="text-xl font-bold text-orange-900 mb-2">
             Précisez votre besoin
           </h3>
-          <p className="text-sm text-orange-700">
-            "{prompt}" - Que souhaitez-vous faire ?
+          <p className="text-sm text-orange-700 leading-relaxed">
+            <span className="font-medium">"{prompt}"</span>
+            <br />
+            <span className="text-orange-600">Que souhaitez-vous faire ?</span>
           </p>
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-3">
+      <div className="grid sm:grid-cols-2 gap-4">
         <button
           onClick={() => onClarify?.('need_external')}
-          className="group p-4 rounded-lg border-2 border-orange-200 bg-white hover:border-blue-500 hover:bg-blue-50 transition-all text-left"
+          className="group relative overflow-hidden p-5 rounded-xl border-2 border-blue-200 bg-white hover:border-blue-400 hover:bg-blue-50 transition-all duration-300 text-left shadow-sm hover:shadow-lg transform hover:scale-[1.02]"
         >
-          <div className="flex items-center gap-3 mb-2">
-            <Briefcase className="text-blue-600 group-hover:scale-110 transition-transform" size={24} />
-            <span className="font-semibold text-slate-900">Je cherche quelqu'un</span>
+          <div className="absolute top-0 right-0 w-20 h-20 bg-blue-100 rounded-full -mr-10 -mt-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="relative">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                <Briefcase className="text-blue-600 group-hover:scale-110 transition-transform" size={22} />
+              </div>
+              <span className="text-lg font-bold text-slate-900">Je cherche quelqu'un</span>
+            </div>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Publier une annonce et trouver des talents
+            </p>
           </div>
-          <p className="text-sm text-slate-600">
-            Publier une annonce et trouver des talents
-          </p>
         </button>
 
         <button
           onClick={() => onClarify?.('personal_search')}
-          className="group p-4 rounded-lg border-2 border-orange-200 bg-white hover:border-orange-500 hover:bg-orange-50 transition-all text-left"
+          className="group relative overflow-hidden p-5 rounded-xl border-2 border-orange-200 bg-white hover:border-orange-400 hover:bg-orange-50 transition-all duration-300 text-left shadow-sm hover:shadow-lg transform hover:scale-[1.02]"
         >
-          <div className="flex items-center gap-3 mb-2">
-            <Users className="text-orange-600 group-hover:scale-110 transition-transform" size={24} />
-            <span className="font-semibold text-slate-900">Je cherche du travail</span>
+          <div className="absolute top-0 right-0 w-20 h-20 bg-orange-100 rounded-full -mr-10 -mt-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="relative">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center group-hover:bg-orange-200 transition-colors">
+                <Users className="text-orange-600 group-hover:scale-110 transition-transform" size={22} />
+              </div>
+              <span className="text-lg font-bold text-slate-900">Je cherche du travail</span>
+            </div>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Voir les missions disponibles et postuler
+            </p>
           </div>
-          <p className="text-sm text-slate-600">
-            Voir les missions disponibles et postuler
-          </p>
         </button>
       </div>
     </div>
@@ -169,36 +181,48 @@ function RecruiterResult({
   if (!draft) return null;
 
   return (
-    <div className="mt-6 space-y-4 animate-in fade-in slide-in-from-left duration-500">
+    <div className="mt-6 space-y-5 animate-in fade-in slide-in-from-left duration-500">
       {/* Annonce générée */}
-      <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-        <div className="flex items-center gap-2 mb-4">
-          <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
-            <CheckCircle2 className="text-blue-600" size={20} />
+      <div className="rounded-2xl border-2 border-blue-200 bg-gradient-to-br from-white to-blue-50/30 p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div className="flex items-start gap-4 mb-6">
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-md">
+            <CheckCircle2 className="text-white" size={24} />
           </div>
-          <h3 className="text-lg font-semibold text-slate-900">
-            Votre annonce est prête
-          </h3>
+          <div className="flex-1">
+            <h3 className="text-xl font-bold text-slate-900 mb-1">
+              ✨ Votre annonce est prête
+            </h3>
+            <p className="text-sm text-blue-600 font-medium">
+              Optimisée par l'IA pour attirer les meilleurs talents
+            </p>
+          </div>
         </div>
 
-        <div className="space-y-3">
-          <div>
-            <h4 className="font-semibold text-slate-900">{draft.jobTitle}</h4>
+        <div className="space-y-4">
+          <div className="p-4 rounded-xl bg-white border border-blue-100">
+            <h4 className="text-lg font-bold text-slate-900 mb-2">{draft.jobTitle}</h4>
             {draft.location && (
-              <p className="text-sm text-slate-600 flex items-center gap-1 mt-1">
-                <MapPin size={14} />
-                {draft.location}
-              </p>
+              <div className="flex items-center gap-2 text-sm text-slate-600 mb-3">
+                <MapPin size={16} className="text-blue-500" />
+                <span className="font-medium">{draft.location}</span>
+              </div>
             )}
+            <p className="text-sm text-slate-700 leading-relaxed">{draft.description}</p>
           </div>
 
-          <p className="text-sm text-slate-700">{draft.description}</p>
-
           {draft.missions.length > 0 && (
-            <div>
-              <div className="text-sm font-semibold text-slate-700 mb-1">Missions</div>
-              <ul className="list-disc pl-5 text-sm text-slate-600">
-                {draft.missions.slice(0, 3).map((m, i) => <li key={i}>{m}</li>)}
+            <div className="p-4 rounded-xl bg-blue-50/50 border border-blue-100">
+              <div className="text-sm font-bold text-blue-900 mb-3 flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                Missions principales
+              </div>
+              <ul className="space-y-2">
+                {draft.missions.slice(0, 3).map((m, i) => (
+                  <li key={i} className="text-sm text-slate-700 flex items-start gap-2">
+                    <span className="text-blue-500 font-bold">•</span>
+                    <span>{m}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           )}
@@ -207,46 +231,56 @@ function RecruiterResult({
 
       {/* Talents matchés */}
       {matchedTalents && matchedTalents.length > 0 && (
-        <div className="rounded-xl border border-green-200 bg-green-50 p-6">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2">
-              <Zap className="text-green-600" size={20} />
-              <h3 className="font-semibold text-green-900">
-                {matchedTalents.length} talent{matchedTalents.length > 1 ? 's' : ''} trouvé{matchedTalents.length > 1 ? 's' : ''} !
-              </h3>
+        <div className="rounded-2xl border-2 border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 p-6 sm:p-8 shadow-lg">
+          <div className="flex items-start justify-between mb-6">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center shadow-md">
+                <Zap className="text-white" size={24} />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-green-900">
+                  🎉 {matchedTalents.length} talent{matchedTalents.length > 1 ? 's' : ''} trouvé{matchedTalents.length > 1 ? 's' : ''} !
+                </h3>
+                <p className="text-sm text-green-700 font-medium flex items-center gap-1.5 mt-1">
+                  <Clock size={14} />
+                  Disponibles maintenant
+                </p>
+              </div>
             </div>
-            <span className="text-xs text-green-700 flex items-center gap-1">
-              <Clock size={12} />
-              Disponibles maintenant
-            </span>
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-3">
             {matchedTalents.slice(0, 3).map((talent) => (
-              <div key={talent.id} className="bg-white rounded-lg border border-green-200 p-3">
+              <div key={talent.id} className="group bg-white rounded-xl border-2 border-green-200 p-4 hover:border-green-400 hover:shadow-md transition-all duration-300">
                 <div className="flex items-center justify-between">
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-slate-900">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="font-bold text-slate-900 text-base">
                         {talent.first_name} {talent.last_name?.charAt(0)}.
                       </span>
                       {talent.rating && talent.rating >= 4.5 && (
-                        <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full flex items-center gap-1">
+                        <span className="text-xs bg-gradient-to-r from-yellow-100 to-amber-100 text-yellow-800 px-2.5 py-1 rounded-full flex items-center gap-1 font-semibold shadow-sm">
                           <Star size={12} fill="currentColor" />
                           {talent.rating}
                         </span>
                       )}
                     </div>
-                    <div className="text-xs text-slate-600 mt-1">
-                      <MapPin size={12} className="inline" /> {talent.city}
+                    <div className="flex items-center gap-3 text-sm text-slate-600">
+                      <span className="flex items-center gap-1.5">
+                        <MapPin size={14} className="text-green-500" />
+                        <span className="font-medium">{talent.city}</span>
+                      </span>
                       {talent.total_missions && talent.total_missions > 0 && (
-                        <span className="ml-2">• {talent.total_missions} missions</span>
+                        <span className="flex items-center gap-1.5">
+                          <div className="w-1 h-1 rounded-full bg-slate-400"></div>
+                          <span>{talent.total_missions} missions</span>
+                        </span>
                       )}
                     </div>
                   </div>
-                  <span className="text-xs px-2 py-1 rounded-full bg-green-100 text-green-800 font-medium">
+                  <div className="px-3 py-1.5 rounded-lg bg-green-100 border border-green-300 text-green-800 font-bold text-sm group-hover:bg-green-200 transition-colors">
                     ✓ Dispo
-                  </span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -255,35 +289,40 @@ function RecruiterResult({
       )}
 
       {/* CTAs */}
-      <div className="space-y-3">
+      <div className="space-y-4">
         <button
           onClick={onPublishWithoutAccount}
-          className="w-full px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+          className="group w-full px-6 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl font-bold text-base transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
         >
-          <Send size={18} />
-          Publier l'annonce {matchedTalents && matchedTalents.length > 0 && `+ contacter les ${matchedTalents.length} talents`}
+          <Send size={20} className="group-hover:translate-x-1 transition-transform" />
+          <span>
+            Publier l'annonce
+            {matchedTalents && matchedTalents.length > 0 && (
+              <span className="font-normal"> + contacter les {matchedTalents.length} talents</span>
+            )}
+          </span>
         </button>
 
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-slate-200"></div>
+            <div className="w-full border-t-2 border-slate-200"></div>
           </div>
-          <div className="relative flex justify-center text-xs">
-            <span className="px-2 bg-slate-50 text-slate-500">OU</span>
+          <div className="relative flex justify-center text-sm">
+            <span className="px-3 py-1 bg-white text-slate-500 font-semibold rounded-full">OU</span>
           </div>
         </div>
 
         <button
           onClick={onCreateAccount}
-          className="w-full px-6 py-3 border-2 border-blue-200 bg-blue-50 text-blue-700 rounded-lg font-semibold hover:bg-blue-100 transition-all flex items-center justify-center gap-2"
+          className="group w-full px-6 py-4 border-2 border-blue-300 bg-white hover:bg-blue-50 text-blue-700 rounded-xl font-bold text-base transition-all duration-300 flex items-center justify-center gap-3 hover:border-blue-400 hover:shadow-md transform hover:scale-[1.01]"
         >
-          <UserPlus size={18} />
+          <UserPlus size={20} className="group-hover:scale-110 transition-transform" />
           Créer un compte recruteur
         </button>
 
-        <div className="text-center">
-          <p className="text-xs text-slate-600">
-            💡 Avec un compte : notifications automatiques, historique des annonces, matching prioritaire
+        <div className="text-center p-4 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100">
+          <p className="text-sm text-slate-700 leading-relaxed">
+            <span className="font-bold text-blue-700">💡 Avec un compte :</span> notifications automatiques, historique des annonces, matching prioritaire
           </p>
         </div>
       </div>
@@ -337,63 +376,69 @@ function TalentResult({
   ];
 
   return (
-    <div className="mt-6 space-y-4 animate-in fade-in slide-in-from-right duration-500">
+    <div className="mt-6 space-y-5 animate-in fade-in slide-in-from-right duration-500">
       {/* Header */}
-      <div className="rounded-xl border border-orange-200 bg-orange-50 p-6">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
-            <Zap className="text-orange-600" size={20} />
+      <div className="rounded-2xl border-2 border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50 p-6 sm:p-8 shadow-lg">
+        <div className="flex items-start gap-4 mb-3">
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-md flex-shrink-0">
+            <Zap className="text-white" size={24} />
           </div>
-          <h3 className="text-lg font-semibold text-orange-900">
-            Missions qui correspondent à votre profil
-          </h3>
+          <div className="flex-1">
+            <h3 className="text-xl font-bold text-orange-900 mb-1">
+              ✨ Missions qui correspondent à votre profil
+            </h3>
+            <p className="text-sm text-orange-700 leading-relaxed">
+              Basé sur : <span className="font-semibold">"{prompt}"</span>
+            </p>
+          </div>
         </div>
-        <p className="text-sm text-orange-700">
-          Basé sur : "{prompt}"
-        </p>
       </div>
 
       {/* Liste des missions */}
       <div className="space-y-3">
-        {mockMissions.map((mission) => (
+        {mockMissions.map((mission, index) => (
           <div
             key={mission.id}
-            className="group rounded-lg border-2 border-slate-200 bg-white p-4 hover:border-orange-300 hover:shadow-md transition-all cursor-pointer"
+            className="group relative overflow-hidden rounded-xl border-2 border-slate-200 bg-white p-5 hover:border-orange-400 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-[1.01]"
             onClick={() => onApplyWithoutAccount?.(mission.id)}
+            style={{ animationDelay: `${index * 100}ms` }}
           >
-            <div className="flex items-start justify-between gap-4">
+            {mission.urgency === 'high' && (
+              <div className="absolute top-0 right-0 w-24 h-24 bg-red-50 rounded-full -mr-12 -mt-12 opacity-50"></div>
+            )}
+            <div className="relative flex items-start justify-between gap-4">
               <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <h4 className="font-semibold text-slate-900">{mission.title}</h4>
+                <div className="flex items-center gap-2 mb-2">
+                  <h4 className="text-lg font-bold text-slate-900">{mission.title}</h4>
                   {mission.urgency === 'high' && (
-                    <span className="text-xs px-2 py-0.5 rounded-full bg-red-100 text-red-700 font-medium">
+                    <span className="text-xs px-2.5 py-1 rounded-full bg-gradient-to-r from-red-100 to-orange-100 text-red-700 font-bold shadow-sm animate-pulse">
                       🔥 Urgent
                     </span>
                   )}
                 </div>
-                <div className="flex items-center gap-1 text-sm text-slate-600 mb-2">
-                  <Building2 size={14} />
-                  {mission.company}
+                <div className="flex items-center gap-2 text-sm text-slate-600 mb-3">
+                  <Building2 size={16} className="text-orange-500" />
+                  <span className="font-medium">{mission.company}</span>
                 </div>
-                <div className="flex flex-wrap items-center gap-3 text-xs text-slate-600">
-                  <span className="flex items-center gap-1">
-                    <MapPin size={12} />
-                    {mission.city}
+                <div className="flex flex-wrap items-center gap-4 text-sm text-slate-600">
+                  <span className="flex items-center gap-1.5">
+                    <MapPin size={14} className="text-orange-500" />
+                    <span className="font-medium">{mission.city}</span>
                   </span>
-                  <span className="flex items-center gap-1">
-                    <Clock size={12} />
-                    {mission.time}
+                  <span className="flex items-center gap-1.5">
+                    <Clock size={14} className="text-orange-500" />
+                    <span>{mission.time}</span>
                   </span>
                 </div>
               </div>
-              <div className="text-right">
-                <div className="text-xl font-bold text-orange-600 mb-1">
+              <div className="text-right flex flex-col items-end gap-2">
+                <div className="text-2xl font-bold text-orange-600">
                   {mission.pay}
                 </div>
-                <button className="text-sm text-orange-600 font-semibold group-hover:underline flex items-center gap-1">
+                <div className="px-4 py-2 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-sm flex items-center gap-2 group-hover:from-orange-600 group-hover:to-orange-700 transition-all shadow-md">
                   Postuler
-                  <ArrowRight size={14} />
-                </button>
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
             </div>
           </div>
@@ -401,18 +446,18 @@ function TalentResult({
       </div>
 
       {/* CTAs */}
-      <div className="space-y-3 pt-4">
+      <div className="space-y-4 pt-2">
         <button
           onClick={onCreateProfile}
-          className="w-full px-6 py-3 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+          className="group w-full px-6 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl font-bold text-base transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
         >
-          <UserPlus size={18} />
+          <UserPlus size={20} className="group-hover:scale-110 transition-transform" />
           Créer mon profil talent
         </button>
 
-        <div className="text-center">
-          <p className="text-xs text-slate-600">
-            💡 Avec un profil : recevez des alertes automatiques, postulez en 1 clic, construisez votre réputation
+        <div className="text-center p-4 rounded-xl bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-100">
+          <p className="text-sm text-slate-700 leading-relaxed">
+            <span className="font-bold text-orange-700">💡 Avec un profil :</span> recevez des alertes automatiques, postulez en 1 clic, construisez votre réputation
           </p>
         </div>
       </div>
