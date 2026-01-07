@@ -2685,9 +2685,13 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
 
   // Publier une annonce SANS compte
   async function handlePublishWithoutAccount() {
-    console.log("[LMJLanding] 📤 Ouverture modal publication sans compte");
+    console.log("[LMJLanding] 📤 CLICK sur bouton Publication");
+    console.log("[LMJLanding] Draft:", draft);
+    console.log("[LMJLanding] publishJobModal:", publishJobModal);
     const title = draft?.jobTitle || "Annonce";
+    console.log("[LMJLanding] Titre qui sera passé:", title);
     publishJobModal.openModal(title);
+    console.log("[LMJLanding] Après openModal, isOpen=", publishJobModal.isOpen);
     track("publish_modal_opened", {
       hasMatches: matchedTalents.length > 0
     });
@@ -3260,12 +3264,12 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    UWi analyse votre besoin...
+                    Analyse en cours...
                   </>
                 ) : (
                   <>
                     <Sparkles size={18} />
-                    Demander à UWi de créer l'annonce
+                    Voir l'aperçu
                   </>
                 )}
               </button>

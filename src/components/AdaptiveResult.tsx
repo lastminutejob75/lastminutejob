@@ -285,7 +285,11 @@ function RecruiterResult({
       {/* CTA unique et clair */}
       <div className="space-y-4">
         <button
-          onClick={onPublishWithoutAccount}
+          onClick={() => {
+            console.log("[AdaptiveResult] 🔘 Bouton Publication cliqué");
+            console.log("[AdaptiveResult] Fonction disponible ?", !!onPublishWithoutAccount);
+            onPublishWithoutAccount?.();
+          }}
           className="group w-full px-6 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl font-bold text-base transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
         >
           <Send size={20} className="group-hover:translate-x-1 transition-transform" />

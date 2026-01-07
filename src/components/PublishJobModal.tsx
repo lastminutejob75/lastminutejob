@@ -257,15 +257,17 @@ export function PublishJobModal({
 
 // Hook pour gérer l'ouverture/fermeture du modal
 export function usePublishJobModal() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [jobTitle, setJobTitle] = React.useState<string>('');
+  const [isOpen, setIsOpen] = useState(false);
+  const [jobTitle, setJobTitle] = useState<string>('');
 
   const openModal = (title: string) => {
+    console.log("[PublishJobModal] 🔓 Ouverture modal avec titre:", title);
     setJobTitle(title);
     setIsOpen(true);
   };
 
   const closeModal = () => {
+    console.log("[PublishJobModal] 🔒 Fermeture modal");
     setIsOpen(false);
   };
 
