@@ -105,56 +105,56 @@ function ClarificationBox({
   onClarify?: (intent: 'need_external' | 'personal_search') => void;
 }) {
   return (
-    <div className="mt-6 rounded-2xl border-2 border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50 p-6 sm:p-8 animate-in fade-in slide-in-from-top-2 duration-500 shadow-sm">
+    <div className="mt-6 rounded-3xl border-4 border-orange-300 bg-gradient-to-br from-orange-100 to-amber-100 p-8 sm:p-10 animate-in fade-in slide-in-from-top-2 duration-500 shadow-2xl">
       <div className="flex items-start gap-4 mb-6">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-400 to-orange-500 flex items-center justify-center flex-shrink-0 shadow-md">
-          <Zap size={24} className="text-white" />
+        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center flex-shrink-0 shadow-xl animate-pulse">
+          <Zap size={32} className="text-white" />
         </div>
         <div className="flex-1">
-          <h3 className="text-xl font-bold text-orange-900 mb-2">
-            Précisez votre besoin
+          <h3 className="text-2xl font-black text-orange-900 mb-2">
+            ⚡ Précisez votre besoin
           </h3>
-          <p className="text-sm text-orange-700 leading-relaxed">
-            <span className="font-medium">"{prompt}"</span>
+          <p className="text-base text-orange-800 leading-relaxed font-semibold">
+            <span className="font-bold">"{prompt}"</span>
             <br />
-            <span className="text-orange-600">Que souhaitez-vous faire ?</span>
+            <span className="text-orange-700">→ Que souhaitez-vous faire ?</span>
           </p>
         </div>
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-4">
+      <div className="grid sm:grid-cols-2 gap-5">
         <button
           onClick={() => onClarify?.('need_external')}
-          className="group relative overflow-hidden p-5 rounded-xl border-2 border-blue-200 bg-white hover:border-blue-400 hover:bg-blue-50 transition-all duration-300 text-left shadow-sm hover:shadow-lg transform hover:scale-[1.02]"
+          className="group relative overflow-hidden p-6 rounded-2xl border-4 border-blue-300 bg-gradient-to-br from-blue-50 to-blue-100 hover:border-blue-500 hover:from-blue-100 hover:to-blue-200 transition-all duration-300 text-left shadow-xl hover:shadow-2xl transform hover:scale-105 hover:-rotate-1"
         >
-          <div className="absolute top-0 right-0 w-20 h-20 bg-blue-100 rounded-full -mr-10 -mt-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-200 rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
           <div className="relative">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                <Briefcase className="text-blue-600 group-hover:scale-110 transition-transform" size={22} />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center group-hover:scale-125 transition-transform shadow-lg">
+                <Briefcase className="text-white" size={28} />
               </div>
-              <span className="text-lg font-bold text-slate-900">Je cherche quelqu'un</span>
+              <span className="text-xl font-black text-slate-900">Je cherche quelqu'un</span>
             </div>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              Publier une annonce et trouver des talents
+            <p className="text-base text-slate-700 leading-relaxed font-semibold">
+              📢 Publier une annonce et trouver des talents
             </p>
           </div>
         </button>
 
         <button
           onClick={() => onClarify?.('personal_search')}
-          className="group relative overflow-hidden p-5 rounded-xl border-2 border-orange-200 bg-white hover:border-orange-400 hover:bg-orange-50 transition-all duration-300 text-left shadow-sm hover:shadow-lg transform hover:scale-[1.02]"
+          className="group relative overflow-hidden p-6 rounded-2xl border-4 border-orange-300 bg-gradient-to-br from-orange-50 to-orange-100 hover:border-orange-500 hover:from-orange-100 hover:to-orange-200 transition-all duration-300 text-left shadow-xl hover:shadow-2xl transform hover:scale-105 hover:rotate-1"
         >
-          <div className="absolute top-0 right-0 w-20 h-20 bg-orange-100 rounded-full -mr-10 -mt-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-orange-200 rounded-full -mr-16 -mt-16 opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
           <div className="relative">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center group-hover:bg-orange-200 transition-colors">
-                <Users className="text-orange-600 group-hover:scale-110 transition-transform" size={22} />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center group-hover:scale-125 transition-transform shadow-lg">
+                <Users className="text-white" size={28} />
               </div>
-              <span className="text-lg font-bold text-slate-900">Je cherche du travail</span>
+              <span className="text-xl font-black text-slate-900">Je cherche du travail</span>
             </div>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              Voir les missions disponibles et postuler
+            <p className="text-base text-slate-700 leading-relaxed font-semibold">
+              💼 Voir les missions disponibles et postuler
             </p>
           </div>
         </button>
