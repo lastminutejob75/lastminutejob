@@ -2560,7 +2560,7 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
   // Modal pour postuler sans compte
   const quickApplyModal = useQuickApplyModal();
   
-  async function generateAnnouncement() {
+  async function generateAnnouncement(forcedIntent?: IntentType) {
     if (!prompt.trim()) return;
 
     setShowIntentBox(false);
@@ -2568,8 +2568,8 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
     setIsGenerating(true);
 
     try {
-      // 🎯 ÉTAPE 1 : Détecter l'intention
-      const intent = detectIntent(prompt);
+      // 🎯 ÉTAPE 1 : Détecter l'intention (ou utiliser celle forcée)
+      const intent = forcedIntent || detectIntent(prompt);
       setDetectedIntent(intent);
       console.log("[LMJLanding] 🧠 Intention détectée :", intent);
 
@@ -2675,13 +2675,8 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
     console.log("[LMJLanding] ✅ Intention clarifiée :", clarifiedIntent);
     setDetectedIntent(clarifiedIntent);
 
-    // Relancer la génération avec la bonne intention
-    if (clarifiedIntent === 'need_external') {
-      generateAnnouncement();
-    } else {
-      // Pour candidat, juste afficher les missions
-      setSubmitted(true);
-    }
+    // Relancer la génération avec l'intention FORCÉE
+    generateAnnouncement(clarifiedIntent);
   }
 
   // Publier une annonce SANS compte
@@ -2772,26 +2767,20 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
   useEffect(() => {
     if (debouncedPrompt.trim() && !submitted) {
       const intent = detectIntent(debouncedPrompt);
-      
+
       // NE PAS GÉNÉRER si recherche personnelle
       if (intent === "personal_search") {
         return;
       }
-      
+
       // NE PAS GÉNÉRER automatiquement si ambigu
       if (intent === "ambiguous") {
         return;
       }
-      
+
       // GÉNÉRER seulement si besoin externe
-      setIsGenerating(true);
-      setTimeout(() => {
-        setSubmitted(true);
-        setIsGenerating(false);
-        setShowSuccessAnimation(true);
-        setTimeout(() => setShowSuccessAnimation(false), 2000);
-        track("uwi_realtime_preview_generated");
-      }, 300);
+      console.log("[LMJLanding] 🎯 Génération automatique après debounce");
+      generateAnnouncement();
     }
   }, [debouncedPrompt, submitted]);
   
@@ -3380,8 +3369,8 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
             onSubmit={handleSubmitApplication}
           />
 
-          {/* ANCIEN CODE - Gardé pour l'édition du draft si besoin */}
-          {draft && detectedIntent === 'need_external' && (
+          {/* ANCIEN CODE - DÉSACTIVÉ car remplacé par AdaptiveResult */}
+          {false && draft && detectedIntent === 'need_external' && (
             <div className="rounded-xl border border-slate-200 p-4 animate-in fade-in duration-300 relative">
               {/* Animation de succès */}
               {showSuccessAnimation && (
