@@ -38,52 +38,85 @@ export function CandidateWizard() {
     setRoleHint(null);
 
     try {
-      const apiUrl = `${SUPABASE_URL}/functions/v1/analyze-job`;
-      
-      const res = await fetch(apiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt })
-      });
+      // ✅ Détection LOCALE pour éviter les appels API
+      const lower = prompt.toLowerCase();
 
-      if (!res.ok) {
-        throw new Error("Erreur lors de l'analyse");
+      // Détecter le métier
+      let detectedJobKey = "";
+      let detectedJobLabel = "";
+
+      // Mots clés pour différents métiers
+      const jobKeywords: Record<string, { key: string, label: string, keywords: string[] }> = {
+        serveur: { key: "server", label: "Serveur/Serveuse", keywords: ["serveur", "serveuse", "service"] },
+        cuisinier: { key: "cook", label: "Cuisinier/Cuisinière", keywords: ["cuisinier", "cuisinière", "cuisine", "chef"] },
+        barman: { key: "bartender", label: "Barman/Barmaid", keywords: ["barman", "barmaid", "bartender"] },
+        livreur: { key: "delivery", label: "Livreur/Livreuse", keywords: ["livreur", "livreuse", "livraison", "coursier"] },
+        vendeur: { key: "seller", label: "Vendeur/Vendeuse", keywords: ["vendeur", "vendeuse", "vente"] },
+        receptionniste: { key: "receptionist", label: "Réceptionniste", keywords: ["réceptionniste", "réception", "accueil"] },
+        agent: { key: "agent", label: "Agent de service", keywords: ["agent", "entretien", "nettoyage"] },
+        manutentionnaire: { key: "handler", label: "Manutentionnaire", keywords: ["manutentionnaire", "manutention", "magasinier"] },
+      };
+
+      // Chercher le métier
+      for (const [name, job] of Object.entries(jobKeywords)) {
+        for (const keyword of job.keywords) {
+          if (lower.includes(keyword)) {
+            detectedJobKey = job.key;
+            detectedJobLabel = job.label;
+            break;
+          }
+        }
+        if (detectedJobKey) break;
       }
 
-      const data = await res.json();
+      // Détecter la localisation
+      const cities = ["Paris", "Lyon", "Lille", "Marseille", "Toulouse", "Bordeaux", "Nantes", "Nice", "Strasbourg"];
+      let location = "";
+      for (const city of cities) {
+        if (lower.includes(city.toLowerCase())) {
+          location = city;
+          break;
+        }
+      }
 
-      // Support à la fois l'ancien format et le nouveau format ParsedNeed
-      const jobCandidates = data.jobCandidates || data.detectedJobs || [];
-      const direction = data.direction || (data.role ? mapRoleToDirection(data.role) : "unknown");
-      
-      // moteur
-      setDetectedJobs(jobCandidates);
-      setContext(data.context || {});
-      setRole(data.role || (direction === "offre_de_competence" ? "candidate" : direction === "demande_de_ressource" ? "recruiter" : "unknown"));
-
-      // Construire un profil par défaut basé sur ce qu'on sait
-      const primaryJob = jobCandidates[0] || null;
-      const defaultLocation = data.context?.location || "";
-      const isCandidate = direction === "offre_de_competence" || data.role === "candidate";
+      // Vérifier si c'est bien un candidat
+      const isCandidateKeywords = ["je suis", "je cherche", "dispo", "disponible", "recherche un poste", "recherche du travail"];
+      const isCandidate = isCandidateKeywords.some(kw => lower.includes(kw));
 
       if (!isCandidate) {
         setRoleHint(
           "Ton message ressemble plutôt à une demande de recruteur. Si tu cherches un poste, reformule en parlant de toi (ex : \"Je suis serveur, je cherche un poste à Lille…\")."
         );
+        setLoading(false);
+        return;
       }
 
-      const defaultHeadline = primaryJob
-        ? `Profil ${primaryJob.jobKey} à la recherche de missions`
-        : "Profil à la recherche de missions";
+      if (!detectedJobKey) {
+        setRoleHint(
+          "Je n'ai pas réussi à détecter ton métier. Essaye de préciser ton profil (ex : 'Je suis cuisinier, 5 ans d'expérience, je cherche des extras...')."
+        );
+        setLoading(false);
+        return;
+      }
 
-      const defaultBio = `Je suis ${
-        primaryJob ? primaryJob.jobKey : "un professionnel"
-      } et je souhaite trouver de nouvelles opportunités.`;
+      // Créer le profil détecté
+      const detectedJob: DetectedJob = {
+        jobKey: detectedJobKey,
+        score: 1,
+        confidence: 0.8
+      };
+
+      setDetectedJobs([detectedJob]);
+      setContext({ location: location || undefined });
+      setRole("candidate");
+
+      const defaultHeadline = `${detectedJobLabel} à la recherche de missions`;
+      const defaultBio = `Je suis ${detectedJobLabel.toLowerCase()} et je souhaite trouver de nouvelles opportunités.`;
 
       setProfile({
-        jobKey: primaryJob?.jobKey || "",
+        jobKey: detectedJobKey,
         headline: defaultHeadline,
-        location: defaultLocation,
+        location: location,
         availability: "",
         experienceLevel: "",
         contractType: "",
@@ -91,15 +124,7 @@ export function CandidateWizard() {
         bio: defaultBio
       });
 
-      // Étape suivante : si on a au moins un métier → confirm_job, sinon on reste sur prompt avec un message
-      if (jobCandidates.length === 0) {
-        setRoleHint(
-          "Je n'ai pas réussi à détecter ton métier. Essaye de préciser ton profil (ex : 'Je suis cuisinier, 5 ans d'expérience, je cherche des extras...')."
-        );
-        setStep("prompt");
-      } else {
-        setStep("confirm_job");
-      }
+      setStep("confirm_job");
     } catch (error) {
       console.error("Error analyzing prompt:", error);
       setRoleHint("Erreur lors de l'analyse. Veuillez réessayer.");
