@@ -2560,7 +2560,7 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
   // Modal pour postuler sans compte
   const quickApplyModal = useQuickApplyModal();
   
-  async function generateAnnouncement() {
+  async function generateAnnouncement(forcedIntent?: IntentType) {
     if (!prompt.trim()) return;
 
     setShowIntentBox(false);
@@ -2568,8 +2568,8 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
     setIsGenerating(true);
 
     try {
-      // 🎯 ÉTAPE 1 : Détecter l'intention
-      const intent = detectIntent(prompt);
+      // 🎯 ÉTAPE 1 : Détecter l'intention (ou utiliser celle forcée)
+      const intent = forcedIntent || detectIntent(prompt);
       setDetectedIntent(intent);
       console.log("[LMJLanding] 🧠 Intention détectée :", intent);
 
@@ -2675,13 +2675,8 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
     console.log("[LMJLanding] ✅ Intention clarifiée :", clarifiedIntent);
     setDetectedIntent(clarifiedIntent);
 
-    // Relancer la génération avec la bonne intention
-    if (clarifiedIntent === 'need_external') {
-      generateAnnouncement();
-    } else {
-      // Pour candidat, juste afficher les missions
-      setSubmitted(true);
-    }
+    // Relancer la génération avec l'intention FORCÉE
+    generateAnnouncement(clarifiedIntent);
   }
 
   // Publier une annonce SANS compte
