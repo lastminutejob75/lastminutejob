@@ -3597,7 +3597,8 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
           )}
 
           {/* Formulaire d'édition du draft */}
-          {draft && (
+          {/* ANCIEN FORMULAIRE D'ÉDITION - DÉSACTIVÉ (remplacé par AdaptiveResult) */}
+          {false && draft && (
             <div className="mt-4 rounded-xl border bg-blue-50 p-4 space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-gray-500">
