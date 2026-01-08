@@ -66,6 +66,7 @@ import { orchestrator } from './lib/orchestrator';
 import type { MatchedTalent, OrchestratedResult } from './lib/orchestrator/types';
 import { AdaptiveResult } from './components/AdaptiveResult';
 import { QuickApplyModal, useQuickApplyModal, type QuickApplyData } from './components/QuickApplyModal';
+import { PublishJobModal, usePublishJobModal, type PublishJobData } from './components/PublishJobModal';
 import { parseLLMResponse } from './lib/llmAnnouncePrompt';
 import jobsDataRaw from './lib/uwi_human_jobs_freelance_varied_skills.json';
 import { enhancedSmartParse } from './lib/smartParser';
@@ -2559,6 +2560,9 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
 
   // Modal pour postuler sans compte
   const quickApplyModal = useQuickApplyModal();
+
+  // Modal pour publier une annonce sans compte
+  const publishJobModal = usePublishJobModal();
   
   async function generateAnnouncement(forcedIntent?: IntentType) {
     if (!prompt.trim()) return;
@@ -2681,21 +2685,33 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
 
   // Publier une annonce SANS compte
   async function handlePublishWithoutAccount() {
-    console.log("[LMJLanding] 📤 Publication sans compte");
-    // TODO: Implémenter la logique de publication
-    // Pour l'instant, juste afficher un message de succès
-    alert("Annonce publiée ! Nous vous recontacterons par email si des talents correspondent.");
-    track("publish_without_account", {
+    console.log("[LMJLanding] 📤 CLICK sur bouton Publication");
+    console.log("[LMJLanding] Draft:", draft);
+    console.log("[LMJLanding] publishJobModal:", publishJobModal);
+    const title = draft?.jobTitle || "Annonce";
+    console.log("[LMJLanding] Titre qui sera passé:", title);
+    publishJobModal.openModal(title);
+    console.log("[LMJLanding] Après openModal, isOpen=", publishJobModal.isOpen);
+    track("publish_modal_opened", {
       hasMatches: matchedTalents.length > 0
     });
   }
 
-  // Créer un compte recruteur
-  function handleCreateRecruiterAccount() {
-    console.log("[LMJLanding] 👔 Création compte recruteur");
-    // Rediriger vers la page de création d'annonce
-    window.location.hash = "#/post-job";
-    track("create_recruiter_account_clicked");
+  // Soumettre la publication avec les données du recruteur
+  async function handleSubmitPublication(data: PublishJobData) {
+    console.log("[LMJLanding] 📮 Soumission publication:", data);
+
+    // TODO: Envoyer à l'API Supabase pour créer l'annonce et le recruteur
+    // Pour l'instant, simulation
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    track("publish_without_account_success", {
+      hasMatches: matchedTalents.length > 0,
+      hasCompany: !!data.company
+    });
+
+    // TODO: Envoyer emails aux talents matchés si applicable
+    console.log("[LMJLanding] ✅ Publication réussie");
   }
 
   // Postuler à une mission SANS compte
@@ -3248,12 +3264,12 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    UWi analyse votre besoin...
+                    Analyse en cours...
                   </>
                 ) : (
                   <>
                     <Sparkles size={18} />
-                    Demander à UWi de créer l'annonce
+                    Voir l'aperçu
                   </>
                 )}
               </button>
@@ -3325,7 +3341,6 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
               draft={draft}
               matchedTalents={matchedTalents}
               onPublishWithoutAccount={handlePublishWithoutAccount}
-              onCreateAccount={handleCreateRecruiterAccount}
               onApplyWithoutAccount={handleApplyWithoutAccount}
               onCreateProfile={handleCreateTalentProfile}
               onClarify={handleClarifyIntent}
@@ -3339,6 +3354,14 @@ function LMJLanding({ onStart, onPublish }: { onStart?: () => void; onPublish?: 
             missionTitle={quickApplyModal.selectedMission?.title}
             missionCompany={quickApplyModal.selectedMission?.company}
             onSubmit={handleSubmitApplication}
+          />
+
+          {/* Modal publication sans compte */}
+          <PublishJobModal
+            isOpen={publishJobModal.isOpen}
+            onClose={publishJobModal.closeModal}
+            jobTitle={publishJobModal.jobTitle}
+            onSubmit={handleSubmitPublication}
           />
 
           {/* ANCIEN CODE - DÉSACTIVÉ car remplacé par AdaptiveResult */}
